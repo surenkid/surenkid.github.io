@@ -1,20 +1,9 @@
 ﻿msFilterList
-# Title: iFish通用保护清单
-# 由 iFish 贡献
+# Title: 定制保护清单
+# 修改自 iFish 
 # Last modified: 2015-05-12 15:50:58
 : Expires=1
-# Homepage: http://www.fishlee.net/
-# Redirect: http://www.fishlee.net/service/download/424
-# javascript:window.external.msAddTrackingProtectionList('http://www.fishlee.net/service/download/424', 'iFish General List')
-# 
-# 
-# 
-#
-# 
-# 
-# 
-# 
-# 
+
 #  coding: utf-8, expires: 1 days
 -d 58.com jingzhun
 -d adshmct.qq.com 
