@@ -1,0 +1,7 @@
+{
+    "useSideMenu":             true,
+    "lineBreaks":              "gfm",
+    "additionalFooterText":    "KTSee Doc - ",
+    "anchorCharacter":         "&para;",
+    "title":                   "KTSee Doc"
+}
