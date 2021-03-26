@@ -58,10 +58,19 @@
 ._文本段落 {
   text-align:left;
 }
+._文本链接 {
+  color:#0000FF;
+}
+.text_link_mouse_over {
+}
+.text_link_mouse_down {
+}
 ._表单提示 {
   color:#999999;
 }
 ._表单禁用 {
+}
+._连接 {
 }
 .refs-design-apple {
   font-family:'PingFangSC-Regular', 'PingFang SC';
@@ -71,6 +80,8 @@
 .text_area {
   color:#000000;
   text-align:left;
+}
+.placeholder {
 }
 .box_1 {
 }
@@ -89,9 +100,9 @@
 }
 .line {
 }
-.text_link_mouse_over {
+.text_link_mouse_over1 {
 }
-.text_link_mouse_down {
+.text_link_mouse_down1 {
 }
 .form_hint {
   color:#999999;
