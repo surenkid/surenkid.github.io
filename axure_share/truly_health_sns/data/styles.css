@@ -12,6 +12,8 @@
 }
 ._形状 {
 }
+.box_3 {
+}
 ._图片_ {
 }
 ._一级标题 {
@@ -76,6 +78,10 @@
   font-family:'PingFangSC-Regular', 'PingFang SC';
   font-weight:400;
   font-style:normal;
+}
+.text_field {
+  color:#000000;
+  text-align:left;
 }
 .text_area {
   color:#000000;
