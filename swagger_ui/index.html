@@ -39,9 +39,19 @@
     window.onload = function() {
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        url: "gapi.yaml",
+        // url: "gapi.yaml",
         dom_id: '#swagger-ui',
         deepLinking: true,
+        /*
+		requestInterceptor: function (req) {
+			var key = localStorage.getItem("authKey");
+
+			if (key && key.trim() !== "") {
+				req.headers.Authorization = 'Bearer ' + key;
+				console.log('Authorized from authKey');
+			}
+		},
+		*/
         presets: [
           SwaggerUIBundle.presets.apis,
           SwaggerUIStandalonePreset
@@ -51,10 +61,11 @@
         ],
         layout: "StandaloneLayout",
         urls: [
-			{url: "https://surenkid.github.io/swagger_ui/doc/gapi.yaml", name: "苏美基础API"},
+			{url: "./doc/gapi.yaml", name: "苏美基础API"},
 			{url: "https://api.apis.guru/v2/specs/googleapis.com/calendar/v3/openapi.yaml", name: "Google Calendar"}
 		],
-        enableCORS: false
+        enableCORS: false,
+        persistAuthorization: true
       });
       // End Swagger UI call region
 
