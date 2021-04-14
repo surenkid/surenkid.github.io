@@ -994,6 +994,10 @@ components:
     schemaContentInput:
       type: object
       properties:
+          user_id:
+            type: integer
+            description: 内容作者的user_id
+            example: 4
           tag_id:
             type: string
             description: 内容标签id（多个用英文逗号分隔）
