@@ -89,7 +89,7 @@
         <div id="wechat-web-container" class="hidden">
             <p class="">点击以下按钮打开小程序</p>
             <wx-open-launch-weapp id="launch-btn" username="" path="">
-                <template>
+                <script type="text/wxtag-template">
                     <style>
                         button {
                             width: 200px;
@@ -106,7 +106,7 @@
                         }
                     </style>
                     <button id="wechat-web-jump-button">打开小程序</button>
-                </template>
+                </script>
             </wx-open-launch-weapp>
         </div>
         <!-- PC浏览器页面 -->
