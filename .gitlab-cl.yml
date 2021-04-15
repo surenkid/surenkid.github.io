@@ -1,0 +1,8 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+  - echo 'Nothing to do...'
+  only:
+  - master
