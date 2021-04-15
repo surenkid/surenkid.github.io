@@ -89,7 +89,7 @@
         <div id="wechat-web-container" class="hidden">
             <p class="">点击以下按钮打开小程序</p>
             <wx-open-launch-weapp id="launch-btn" username="" path="">
-                <script type="text/wxtag-template">
+                 <template>
                     <style>
                         button {
                             width: 200px;
@@ -106,7 +106,7 @@
                         }
                     </style>
                     <button id="wechat-web-jump-button">打开小程序</button>
-                </script>
+                 </template>
             </wx-open-launch-weapp>
         </div>
         <!-- PC浏览器页面 -->
@@ -131,7 +131,7 @@
         // let miniOriginId=getQueryVariable("oid");
         // let miniPage=getQueryVariable("mp");
         // let miniURLScheme=getQueryVariable("us");
-        let miniAppId="wxd9cc641d53f37c9e";
+        let miniAppId="wx8a3858382f37bce0";
         let miniOriginId="gh_a4a11de85695";
         let miniPage="/pages/index/index";
         let miniURLScheme="weixin://dl/business/?t=hNZEf2WUmJt";
@@ -140,7 +140,7 @@
         document.title=buttonText;
         // document.getElementById("wechat-web-jump-button").innerHTML=buttonText;
         document.getElementById("launch-btn").setAttribute("username",miniOriginId);
-        document.getElementById("launch-btn").setAttribute("path",miniPage);
+        document.getElementById("launch-btn").setAttribute("path",miniPage + ".html");
         /*
             微信版本要求为：7.0.12及以上。 系统版本要求为：iOS 10.3及以上、Android 5.0及以上。
             参考文档
@@ -169,6 +169,7 @@
         // 使用开放标签打开小程序时调用，注入wx.config的配置信息,使用小程序云开发静态网站托管的网页可以绕过鉴权，公众号需要后端接口配合返回鉴权参数
         const getWXConfig=async()=>{
             const config={
+				debug: true,
                 appId: miniAppId, // 已认证的小程序appid或已认证的服务号appid
                 timestamp: 0, // 必填，使用小程序云开发静态网站托管的网页填任意数字即可,无须鉴权
                 nonceStr: 'nonceStr', // 必填，使用小程序云开发静态网站托管的网页填任意非空字符串即可,无须鉴权
