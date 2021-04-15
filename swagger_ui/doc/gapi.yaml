@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.4.1
+  version: 1.5.1
   title: 苏美基础API文档
   description: 基础API（基建）主要用于为Saas提供基础接口
   termsOfService: ''
@@ -31,6 +31,7 @@ paths:
           schema:
             type: integer
           description: 手机号
+        - $ref: '#/components/parameters/paramFollowStatusUserId'
       operationId: ''
       responses:
         default:
@@ -42,7 +43,10 @@ paths:
                   - $ref: '#/components/schemas/codeMsg'
                   - properties:
                       data:
-                        $ref: '#/components/schemas/schemaUserInfo'
+                        allOf:
+                          - $ref: '#/components/schemas/schemaUserId'
+                          - $ref: '#/components/schemas/schemaUserInfo'
+                          - $ref: '#/components/schemas/schemaUserOutput'
   /user/add:
     post:
       summary: '新建用户'
@@ -129,6 +133,7 @@ paths:
           schema:
             type: integer
           description: 指定部分用户，该参数为数组用逗号分隔
+        - $ref: '#/components/parameters/paramFollowStatusUserId'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/limit'
       responses:
@@ -149,6 +154,7 @@ paths:
                                 allOf:
                                 - $ref: '#/components/schemas/schemaUserId'
                                 - $ref: '#/components/schemas/schemaUserInfo'
+                                - $ref: '#/components/schemas/schemaUserOutput'
                             total:
                               type: integer
                               description: 记录总条目数
@@ -849,6 +855,13 @@ components:
       schema:
         type: integer
       description: 带上该参数，输出结果中包含该用户是否赞过的状态
+    paramFollowStatusUserId:
+      in: query
+      name: follow_status_user_id
+      required: false
+      schema:
+        type: integer
+      description: 带上该参数，输出结果中包含该该用户是否关注过的状态
   schemas:
     mediaInfo:
       type: object
@@ -1103,6 +1116,7 @@ components:
             type: string
             description: 用户描述
             example: 我是猛将一名
+            
     schemaUserMobile:
       type: object
       required:
@@ -1132,6 +1146,32 @@ components:
             type: integer
             description: 用户ID
             example: 2
+    schemaUser:
+      type: object
+      properties:
+          name:
+            type: string
+            description: 用户名
+            example: 关羽
+          mobile:
+            type: integer
+            description: 用户手机号
+            example: 13812345678
+          avatar:
+            type: string
+            description: 用户头像图片的URL地址
+            example: https://dn-qiniu-avatar.qbox.me/avatar/1.png
+          description:
+            type: string
+            description: 用户描述
+            example: 我是猛将一名
+    schemaUserOutput:
+      type: object
+      properties:
+          follow_status:
+            type: integer
+            description: 该用户是否关注的状态，只有当传入`follow_status_user_id`时才会返回，1表示已关注，0表示未关注
+            example: 1 
     codeMsg:
       type: object
       required: 
