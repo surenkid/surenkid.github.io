@@ -851,8 +851,8 @@ components:
           example: s3/2020/07/09/5f06fcf66871f.jpg
         file_url:
           type: string
-          description: 媒体文件相对路径
-          example: s3/2020/07/09/5f06fcf66871f.jpg
+          description: 媒体文件外链地址
+          example: https://static.sumeils.com/s3/2020/07/09/5f06fcf66871f.jpg
     schemaTagId:
       type: object
       required:
