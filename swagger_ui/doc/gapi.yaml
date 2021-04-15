@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.3.8
+  version: 1.3.10
   title: 苏美基础API文档
   description: 基础API（基建）主要用于为Saas提供基础接口
   termsOfService: ''
@@ -648,7 +648,7 @@ paths:
       parameters:
         - name: media_id
           in: query
-          required: false
+          required: true
           schema:
             type: integer
           description: 媒体文件id
@@ -779,6 +779,13 @@ paths:
             type: integer
           description: 指定标签分组id
           allowEmptyValue: false
+        - name: keyword
+          in: query
+          required: false
+          schema:
+            type: string
+          description: 标签搜索关键词
+          allowEmptyValue: false
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/limit'
       responses:
@@ -812,7 +819,7 @@ components:
     page:
       in: query
       name: page
-      required: true
+      required: false
       schema:
         type: integer
         minimum: 1
@@ -821,7 +828,7 @@ components:
     limit:
       in: query
       name: limit
-      required: true
+      required: false
       schema:
         type: integer
         minimum: 1
@@ -937,13 +944,6 @@ components:
           type: integer
           description: 评论用于回复哪一条评论
           example: 41
-    schemaContentLikeStatus:
-      type: object
-      properties:
-        like_status:
-          type: integer
-          description: 该文章是否赞的状态，只有当传入`like_status_user_id`时才会返回，1表示赞过，0表示未赞
-          example: 1
     schemaContent:
       type: object
       properties:
