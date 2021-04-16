@@ -1008,7 +1008,7 @@ components:
           media_id:
             type: string
             description: 内容包含的媒体附件id（多个用英文逗号分隔）
-            example: 237,238,240
+            example: 1,2,3
           cover_id:
             type: string
             description: 封面图id
@@ -1039,7 +1039,7 @@ components:
           cover_media_id:
             type: integer
             description: 内容封面图的媒体id
-            example: 123
+            example: 11
           cover_file_url:
             type: string
             description: 媒体附件外链
