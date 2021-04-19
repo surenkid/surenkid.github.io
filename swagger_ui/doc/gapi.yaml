@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.6.1
+  version: 1.7.0
   title: 苏美基础API文档
   description: 基础API（基建）主要用于为Saas提供基础接口
   termsOfService: ''
@@ -45,7 +45,7 @@ paths:
                       data:
                         allOf:
                           - $ref: '#/components/schemas/schemaUserId'
-                          - $ref: '#/components/schemas/schemaUserInfo'
+                          - $ref: '#/components/schemas/schemaUser'
                           - $ref: '#/components/schemas/schemaUserOutput'
   /user/add:
     post:
@@ -61,7 +61,7 @@ paths:
             schema: 
               allOf:
                 - $ref: '#/components/schemas/schemaUserMobile'
-                - $ref: '#/components/schemas/schemaUserInfo'
+                - $ref: '#/components/schemas/schemaUser'
                 - $ref: '#/components/schemas/schemaUserThirdId'
       operationId: ''
       responses:
@@ -76,7 +76,7 @@ paths:
                       data:
                         allOf:
                           - $ref: '#/components/schemas/schemaUserId'
-                          - $ref: '#/components/schemas/schemaUserInfo'
+                          - $ref: '#/components/schemas/schemaUser'
   /user/update: 
     post:
       summary: '更新用户'
@@ -91,7 +91,7 @@ paths:
             schema: 
               allOf:
                 - $ref: '#/components/schemas/schemaUserId'
-                - $ref: '#/components/schemas/schemaUserInfo'
+                - $ref: '#/components/schemas/schemaUser'
       responses:
         default:
           description: 默认返回信息
@@ -104,7 +104,7 @@ paths:
                       data:
                         allOf:
                           - $ref: '#/components/schemas/schemaUserId'
-                          - $ref: '#/components/schemas/schemaUserInfo'
+                          - $ref: '#/components/schemas/schemaUser'
 
   /user/list: 
     get:
@@ -153,7 +153,7 @@ paths:
                               items:
                                 allOf:
                                 - $ref: '#/components/schemas/schemaUserId'
-                                - $ref: '#/components/schemas/schemaUserInfo'
+                                - $ref: '#/components/schemas/schemaUser'
                                 - $ref: '#/components/schemas/schemaUserOutput'
                             total:
                               type: integer
@@ -173,7 +173,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema: 
-              $ref: '#/components/schemas/userFollowCouple'
+              $ref: '#/components/schemas/schemaUserFollow'
       responses:
         default:
           description: 默认返回信息
@@ -193,7 +193,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema: 
-              $ref: '#/components/schemas/userFollowCouple'
+              $ref: '#/components/schemas/schemaUserFollow'
       responses:
         default:
           description: 默认返回信息
@@ -647,7 +647,7 @@ paths:
                   - $ref: '#/components/schemas/codeMsg'
                   - properties:
                       data:
-                        $ref: '#/components/schemas/mediaInfo'
+                        $ref: '#/components/schemas/schemaMedia'
   /media/get: 
     get:
       summary: 获取指定媒体
@@ -672,7 +672,7 @@ paths:
                   - $ref: '#/components/schemas/codeMsg'
                   - properties:
                       data:
-                        $ref: '#/components/schemas/mediaInfo'
+                        $ref: '#/components/schemas/schemaMedia'
   /tag/get: 
     get:
       summary: 标签详情
@@ -823,6 +823,169 @@ paths:
                             type: integer
                             description: 标签总数
                             example: 2
+  /config/get: 
+    get:
+      deprecated: true
+      summary: 获取配置值
+      description: 获取指定配置名（键）所对应的配置值，以json格式返回
+      tags:
+        - Config
+      parameters:
+        - name: config_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: 配置id
+          allowEmptyValue: false
+        - name: config_key
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: 配置名（键）
+          allowEmptyValue: false
+      responses:
+        default:
+          description: 默认返回信息
+          content:
+            application/json:
+              schema: 
+                allOf:
+                  - $ref: '#/components/schemas/codeMsg'
+                  - properties:
+                      data:
+                        allOf:
+                          - $ref: '#/components/schemas/schemaConfigId'
+                          - $ref: '#/components/schemas/schemaConfig'
+                          - $ref: '#/components/schemas/schemaConfigOutput'
+  /config/add: 
+    post:
+      deprecated: true
+      summary: 新增配置
+      description: 在系统中新增一条配置
+      tags:
+        - Config
+      requestBody:
+        description: 默认传入参数
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema: 
+              allOf:
+                - $ref: '#/components/schemas/schemaConfig'
+                - $ref: '#/components/schemas/schemaConfigKey'
+                - $ref: '#/components/schemas/schemaConfigInput'
+      responses:
+        default:
+          description: 默认返回信息
+          content:
+            application/json:
+              schema: 
+                allOf:
+                  - $ref: '#/components/schemas/codeMsg'
+                  - properties:
+                      data:
+                        allOf:
+                          - $ref: '#/components/schemas/schemaConfigId'
+                          - $ref: '#/components/schemas/schemaConfig'
+                          - $ref: '#/components/schemas/schemaConfigOutput'
+  /config/update: 
+    post:
+      deprecated: true
+      summary: 更新配置
+      description: 更新系统中已经存在的配置值
+      tags:
+        - Config
+      requestBody:
+        description: 默认传入参数
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema: 
+              allOf:
+                - $ref: '#/components/schemas/schemaConfigId'
+                - $ref: '#/components/schemas/schemaConfig'
+                - $ref: '#/components/schemas/schemaConfigInput'
+      responses:
+        default:
+          description: 默认返回信息
+          content:
+            application/json:
+              schema: 
+                allOf:
+                  - $ref: '#/components/schemas/codeMsg'
+                  - properties:
+                      data:
+                        allOf:
+                          - $ref: '#/components/schemas/schemaConfigId'
+                          - $ref: '#/components/schemas/schemaConfig'
+                          - $ref: '#/components/schemas/schemaConfigOutput'
+  /config/delete: 
+    post:
+      deprecated: true
+      summary: 删除配置
+      description: 在系统中删除一条配置
+      tags:
+        - Config
+      requestBody:
+        description: 默认传入参数
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema: 
+              $ref: '#/components/schemas/schemaConfigId'
+      responses:
+        default:
+          description: 默认返回信息
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/codeMsg'
+  /config/list: 
+    get:
+      deprecated: true
+      summary: 配置列表
+      description: 显示系统中所有的配置列表
+      tags:
+        - Config
+      parameters:
+        - name: config_group_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 指定标签分组id
+          allowEmptyValue: false
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/limit'
+      responses:
+        default:
+          description: 默认返回信息
+          content:
+            application/json:
+              schema: 
+                allOf:
+                  - $ref: '#/components/schemas/codeMsg'
+                  - properties:
+                      data:
+                        type: object
+                        properties:
+                          list:
+                            type: array
+                            items:
+                              allOf:
+                                - properties:
+                                    id:
+                                      type: integer
+                                      description: 配置Id
+                                      example: 5
+                                - $ref: '#/components/schemas/schemaConfig'
+                                - $ref: '#/components/schemas/schemaConfigOutput'
+                          total:
+                            type: integer
+                            description: 配置总数
+                            example: 2
 components:
   parameters:
     page:
@@ -859,10 +1022,44 @@ components:
         type: integer
       description: 带上该参数，输出结果中包含该该用户是否关注过的状态
   schemas:
-    mediaInfo:
+    schemaConfigId:
       type: object
       required:
-        - file
+        - config_id
+      properties:
+        config_id:
+          type: integer
+          description: 配置id
+          example: 2
+    schemaConfig:
+      type: object
+      properties:
+        config_group_id:
+          type: string
+          description: 配置所属的分组id
+          example: 2
+    schemaConfigInput:
+      $ref: '#/components/schemas/schemaConfigValue'
+    schemaConfigOutput:
+      allOf:
+        - $ref: '#/components/schemas/schemaConfigKey'
+        - $ref: '#/components/schemas/schemaConfigValue'
+    schemaConfigValue:
+      type: object
+      properties:
+        config_value:
+          type: string
+          description: 配置对应的值
+          example: https://www.sumeils.com
+    schemaConfigKey:
+      type: object
+      properties:
+        config_key:
+          type: integer
+          description: 配置名（键）
+          example: prod_host_url
+    schemaMedia:
+      type: object
       properties:
         media_id:
           type: integer
@@ -1079,7 +1276,7 @@ components:
                   type: string
                   description: 媒体附件外链
                   example: https://static.sumeils.com/s3/2021/04/07/606d5767ad23c.png
-    userFollowCouple:
+    schemaUserFollow:
       type: object
       required:
         - user_id
@@ -1093,26 +1290,6 @@ components:
             type: integer
             description: 需要关注的用户ID，即关注者
             example: 2
-    schemaUserInfo:
-      type: object
-      properties:
-          name:
-            type: string
-            description: 用户名
-            example: 关羽
-          mobile:
-            type: integer
-            description: 用户手机号
-            example: 13812345678
-          avatar:
-            type: string
-            description: 用户头像图片的URL地址
-            example: https://dn-qiniu-avatar.qbox.me/avatar/1.png
-          description:
-            type: string
-            description: 用户描述
-            example: 我是猛将一名
-            
     schemaUserMobile:
       type: object
       required:
@@ -1223,3 +1400,5 @@ tags:
     description: 媒体中心
   - name: Tag
     description: 标签中心
+  - name: Config
+    description: 配置中心
