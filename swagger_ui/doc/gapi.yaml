@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.7.0
+  version: 1.7.1
   title: 苏美基础API文档
   description: 基础API（基建）主要用于为Saas提供基础接口
   termsOfService: ''
@@ -298,6 +298,7 @@ paths:
           description: 指定用户所关注的所有用户的文章
           allowEmptyValue: false
         - $ref: '#/components/parameters/paramLikeStatusUserId'
+        - $ref: '#/components/parameters/paramSearchKeyWord'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/limit'
       responses:
@@ -1007,6 +1008,13 @@ components:
         maximum: 50
         default: 20
       description: 默认翻页每页显示条目数
+    paramSearchKeyWord:
+      in: query
+      name: keyword
+      required: false
+      schema:
+        type: string
+      description: 带上该参数，输出包含该关键词的结果。注意：关键词长度最小为2
     paramLikeStatusUserId:
       in: query
       name: like_status_user_id
