@@ -41,6 +41,7 @@
 </script>
 <!--<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>-->
 <script src="markmap-autoloader.js"></script>
+<script src="textarea-indent.js"></script>
 <script>
     // Get the input box
     let input = document.getElementById('ktsee-markdown');
@@ -63,14 +64,19 @@
         }, 1000);
     });
 
-    input.focus();
-
     // Load cache from local storage
     if (window.localStorage["ktsee-markmap-editor-textarea"]) {
         input.value = window.localStorage["ktsee-markmap-editor-textarea"];
         document.getElementById('ktsee-markmap').innerHTML = input.value;
         markmap.autoLoader.renderAll();
     }
+    
+    // textarea indent
+    let indent = require("textarea-indent");
+    indent(input);
+    
+    // fouce on textarea
+    input.focus();
 </script>
 </body>
 </html>
