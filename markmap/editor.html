@@ -69,6 +69,7 @@
     // Load cache from local storage
     if (window.localStorage["ktsee-markmap-editor-textarea"]) {
         input.value = window.localStorage["ktsee-markmap-editor-textarea"];
+        document.getElementById('ktsee-markmap').innerHTML = input.value;
         markmap.autoLoader.renderAll();
     }
 </script>
