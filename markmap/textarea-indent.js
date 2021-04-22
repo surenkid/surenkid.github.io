@@ -1,5 +1,3 @@
-module.exports = indent;
-
 function indent(tx){
 
 	tx.addEventListener("keydown",function(event){
