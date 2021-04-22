@@ -59,11 +59,18 @@
         // Make a new timeout set to go off in 1000ms (1 second)
         timeout = setTimeout(function () {
             document.getElementById('ktsee-markmap').innerHTML = input.value;
+            localStorage.setItem("ktsee-markmap-editor-textarea", input.value);
             markmap.autoLoader.renderAll();
         }, 1000);
     });
 
     input.focus();
+
+    // Load cache from local storage
+    if (window.localStorage["ktsee-markmap-editor-textarea"]) {
+        input.value = window.localStorage["ktsee-markmap-editor-textarea"];
+        markmap.autoLoader.renderAll();
+    }
 </script>
 </body>
 </html>
