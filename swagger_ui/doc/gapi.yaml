@@ -460,7 +460,7 @@ paths:
             type: integer
           description: 指定用户所有评论
           allowEmptyValue: false
-        - name: target_content_id
+        - name: content_id
           in: query
           required: false
           schema:
@@ -1159,7 +1159,7 @@ components:
           type: integer
           description: 评论人
           example: 23
-        target_content_id:
+        content_id:
           type: integer
           description: 评论属于那一篇内容
           example: 3
