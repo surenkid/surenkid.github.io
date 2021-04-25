@@ -9,7 +9,7 @@ servers:
     description: 开发环境
   - url: 'https://gapi.sumeils.com/v2'
     description: 生产环境
-  - url: 'https://gapi.local.sumeils.com/v2'
+  - url: 'http://gapi.local.sumeils.com/v2'
     description: 本地环境
     variables: {}
 paths:
