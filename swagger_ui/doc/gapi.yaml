@@ -322,6 +322,7 @@ paths:
                                 - $ref: '#/components/schemas/schemaContentId'
                                 - $ref: '#/components/schemas/schemaContent'
                                 - $ref: '#/components/schemas/schemaContentOutput'
+                                - $ref: '#/components/schemas/schemaContentOutputList'
                           total:
                             type: integer
                             description: 记录总条目数
@@ -1174,10 +1175,6 @@ components:
             type: string
             description: 内容标题
             example: 我的第一篇日志！
-          content:
-            type: string
-            description: 内容正文
-            example: <p>这是我的第一篇日志</p><p>先写到这里吧，下次再见</p>
           # summary:
           #   type: string
           #   description: 内容摘要
@@ -1254,6 +1251,10 @@ components:
     schemaContentOutputGet:
       type: object
       properties:
+          content:
+            type: string
+            description: 内容正文
+            example: <p>这是我的第一篇日志</p><p>先写到这里吧，下次再见</p>
           tag:
             type: array
             items:
@@ -1286,6 +1287,13 @@ components:
                   type: string
                   description: 媒体附件外链
                   example: https://static.sumeils.com/s3/2021/04/07/606d5767ad23c.png
+    schemaContentOutputList:
+      type: object
+      properties:
+          tag_ids:
+            type: string
+            description: 内容标签id（多个用英文逗号分隔）
+            example: 1,2,3,6,9
     schemaUserFollow:
       type: object
       required:
