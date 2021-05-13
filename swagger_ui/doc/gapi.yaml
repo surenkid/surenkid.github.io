@@ -1201,6 +1201,10 @@ components:
     schemaContentInput:
       type: object
       properties:
+          content:
+            type: string
+            description: 内容正文
+            example: <p>这是我的第一篇日志</p><p>先写到这里吧，下次再见</p>
           user_id:
             type: integer
             description: 内容作者的user_id
