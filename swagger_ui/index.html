@@ -39,19 +39,9 @@
     window.onload = function() {
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        // url: "gapi.yaml",
+        // url: "https://petstore.swagger.io/v2/swagger.json",
         dom_id: '#swagger-ui',
         deepLinking: true,
-        /*
-		requestInterceptor: function (req) {
-			var key = localStorage.getItem("authKey");
-
-			if (key && key.trim() !== "") {
-				req.headers.Authorization = 'Bearer ' + key;
-				console.log('Authorized from authKey');
-			}
-		},
-		*/
         presets: [
           SwaggerUIBundle.presets.apis,
           SwaggerUIStandalonePreset
