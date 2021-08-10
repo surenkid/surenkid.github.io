@@ -7,6 +7,8 @@ function uploadContent() {
         var temp = textarea.value;
         
         localStorage.setItem("notepad-txt",temp);
+        content = temp;
+        setTimeout(uploadContent, 1000);
 
         // Make the content available to print.
         printable.removeChild(printable.firstChild);
