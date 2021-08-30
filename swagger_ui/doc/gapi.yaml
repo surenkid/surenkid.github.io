@@ -306,6 +306,13 @@ paths:
             type: integer
           description: 是否仅显示发布状态的文章（用于审核后显示），发布状态为给文章打上`tag_id = 2`的标签，移除该标签为取消发布状态
           allowEmptyValue: false
+        - name: content_status
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: 文章状态：2-待审核、3-已发布（等同于设置`only_publish=1`）。
+          allowEmptyValue: false
         - $ref: '#/components/parameters/paramLikeStatusUserId'
         - $ref: '#/components/parameters/paramSearchKeyWord'
         - $ref: '#/components/parameters/page'
