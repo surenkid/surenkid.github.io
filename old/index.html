@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="surenkid">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+	body{
+	  font-size: 18pt;
+	  color: #fff;
+	  background: #3498db;
+	}
+
+	.wrapper{
+	  margin: 10% auto;
+	  width: 100%;
+	  max-width: 400px;
+	}
+
+	.wrapper ul{
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	.wrapper label{
+	  display: block;
+	  cursor: pointer;
+	  padding: 10px;
+	  border: 1px solid #fff;
+	  border-bottom: none;
+	}
+
+	.wrapper label:hover{
+	  background: #26C281;
+	}
+
+	.wrapper label.last{
+	  border-bottom: 1px solid #fff;
+	}
+
+	.wrapper ul ul li{
+	  padding: 10px;
+	  background: #59ABE3;
+	}
+
+
+	.wrapper input[type="checkbox"]{
+	  position: absolute;
+	  left: -9999px;
+	}
+
+	.wrapper input[type="checkbox"] ~ ul{
+	  height: 0;
+	  transform: scaleY(0);
+	}
+
+	.wrapper input[type="checkbox"]:checked ~ ul{
+	  height: 100%;
+	  transform-origin: top;
+	  transition: transform .2s ease-out;
+	  transform: scaleY(1); 
+	}
+
+	.wrapper input[type="checkbox"]:checked + label{
+	  background: #26C281;
+	  border-bottom: 1px solid #fff;
+	}
+	
+	.wrapper a{
+	  color: #fff;
+	  text-decoration: none;
+	}
+	
+	.wrapper a:hover{
+	  text-decoration: underline;
+	}
+    </style>
+    
+    <title>surenkid.github.io</title>
+  </head>
+
+  <body>
+	<div class="wrapper">
+	<ul>
+	  <li>
+		<input type="checkbox" id="list-item-1">
+		<label for="list-item-1" class="first">在线应用</label>
+		<ul>
+		  <li><a href="./markdown_editor/" target="_blank">Markdown在线编辑器</a></li>
+		  <li><a href="./swagger_editor/" target="_blank">Swagger API编辑器</a></li>
+		  <li><a href="./markmap/editor.html" target="_blank">Markmap在线编辑器</a></li>
+		  <li><a href="./ie_no_ad/" target="_blank">IE跟踪保护过滤广告</a></li>
+		  <li><a href="./mini_redirect/" target="_blank">小程序短信跳转页</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<input type="checkbox" id="list-item-2">
+		<label for="list-item-2">Axure原型图</label>
+		<ul>
+		  <li><a href="./axure_share/truly_health_sns/" target="_blank">初灵健康小程序</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<input type="checkbox" id="list-item-3">
+		<label for="list-item-3">Swagger API文档</label>
+		<ul>
+		  <li><a href="./swagger_ui/?urls.primaryName=%E8%8B%8F%E7%BE%8E%E5%9F%BA%E7%A1%80API" target="_blank">苏美基础API文档</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<input type="checkbox" id="list-item-4">
+		<label for="list-item-4">Markmap思维导图</label>
+		<ul>
+		  <li><a href="./markmap/?url=doc/truly_health_sns.md" target="_blank">初灵内容社区结构</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<input type="checkbox" id="list-item-5">
+		<label for="list-item-5" class="last">关于</label>
+		<ul>
+		  <li>Updated by <a href="https://github.com/surenkid" target="_blank">surenkid</a> on July 13</li>
+		</ul>
+	  </li>
+	</ul>
+	</div>
+  </body>
+</html>
