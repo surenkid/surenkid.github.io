@@ -17,7 +17,7 @@ date_format: '%Y-%m-%d'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url: https://123455.xyz
 baseurl: 
-permalink: pretty
+permalink: /:short_year:y_day:hour:minute:output_ext
 
 # Pagination
 paginate: 10
