@@ -2,6 +2,19 @@ const submitBtn = document.querySelector('#submit');
 const userBox = document.querySelector('#user');
 const assistantBox = document.querySelector('#assistant');
 
+// 从local storage中获取数据
+window.onload = () => {
+  const systemData = localStorage.getItem('system');
+  const userData = localStorage.getItem('user');
+  const assistantData = localStorage.getItem('assistant');
+
+  if (systemData && userData && assistantData) {
+    document.querySelector('#system').value = systemData;
+    userBox.value = userData;
+    assistantBox.value = assistantData;
+  }
+};
+
 submitBtn.addEventListener('click', () => {
   if (userBox.checkValidity()) {
     const payload = {
@@ -35,6 +48,11 @@ submitBtn.addEventListener('click', () => {
         // 完成后恢复按钮，并删除等待动画和提示
         submitBtn.disabled = false;
         submitBtn.innerHTML = `提交`;
+
+        // 将数据保存到local storage中
+        localStorage.setItem('system', document.querySelector('#system').value);
+        localStorage.setItem('user', userBox.value);
+        localStorage.setItem('assistant', result);
       })
       .catch((error) => {
         console.error('Error:', error);
