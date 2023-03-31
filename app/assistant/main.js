@@ -1,9 +1,7 @@
-// 引入marked库
-import marked from 'marked';
-
 const submitBtn = document.querySelector('#submit');
 const userBox = document.querySelector('#user');
 const assistantBox = document.querySelector('#assistant');
+const marked = require('marked');
 
 // 从local storage中获取数据
 window.onload = () => {
