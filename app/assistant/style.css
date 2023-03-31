@@ -2,6 +2,13 @@ h1 {
     text-align: center;
 }
 
+.subtitle {
+    font-size: 14px;
+    margin-left: 10px;
+    color: blue;
+    cursor: pointer;
+}
+
 .form-container {
     max-width: 680px;
     width: 100%;

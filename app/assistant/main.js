@@ -2,6 +2,7 @@ const submitBtn = document.querySelector('#submit');
 const systemBox = document.querySelector('#system');
 const userBox = document.querySelector('#user');
 const assistantBox = document.querySelector('#assistant');
+const subtitle = document.querySelector('.subtitle');
 
 // 从local storage中获取数据
 window.onload = () => {
@@ -65,4 +66,22 @@ submitBtn.addEventListener('click', () => {
         console.error('Error:', error);
       });
   }
+});
+
+subtitle.addEventListener('click', () => {
+  // 发送GET请求
+  fetch('https://api.aigcfun.com/fc/verify-key?key=FCF3CF2371018C3BD8')
+    .then(response => response.json())
+    .then(data => {
+      // 判断errCode是否为0
+      if (data.errCode === 0) {
+        // 获取剩余次数
+        const remain = data.data.remain;
+        // 弹出提示框
+        alert(`API剩余调用次数为${remain}次`);
+      } else {
+        alert('API调用失败');
+      }
+    })
+    .catch(error => console.error(error));
 });
