@@ -1,4 +1,5 @@
 const submitBtn = document.querySelector('#submit');
+const systemBox = document.querySelector('#system');
 const userBox = document.querySelector('#user');
 const assistantBox = document.querySelector('#assistant');
 
@@ -8,16 +9,20 @@ window.onload = () => {
   const userData = localStorage.getItem('user');
   const assistantData = localStorage.getItem('assistant');
 
-  if (systemData && userData && assistantData) {
-    document.querySelector('#system').value = systemData;
+  if (systemData) {
+    systemBox.value = systemData;
+  }
+  if (userData) {
     userBox.value = userData;
-    assistantBox.value = assistantData;
+  }
+  if (assistantData) {
+    assistantBox.innerHTML = marked.parse(assistantData);
   }
 };
 
 submitBtn.addEventListener('click', () => {
   if (userBox.checkValidity()) {
-    const systemValue = document.querySelector('#system').value;
+    const systemValue = systemBox.value;
     const systemContent = systemValue ? systemValue : 'Imagine you are a highly empathetic and intuitive counselor, tasked with guiding a troubled individual through a complex and emotionally charged situation. Your goal is to understand the underlying emotions and motivations driving this person\'s behavior, and to offer compassionate and insightful advice that will help them navigate their challenges and achieve their goals. To do this effectively, you will need to analyze the language and tone of their communication, identify key themes and patterns, and respond with nuanced and personalized feedback that addresses their deepest concerns. Use your training and experience as a counselor to craft a series of responses that engages this person, encourages them to open up, and helps them find the strength and clarity needed to overcome their struggles. You say Chinese.';
     const payload = {
       messages: [
@@ -52,7 +57,7 @@ submitBtn.addEventListener('click', () => {
         submitBtn.innerHTML = `提交`;
 
         // 将数据保存到local storage中
-        localStorage.setItem('system', document.querySelector('#system').value);
+        localStorage.setItem('system', systemBox.value);
         localStorage.setItem('user', userBox.value);
         localStorage.setItem('assistant', result);
       })
