@@ -46,7 +46,7 @@ submitBtn.addEventListener('click', () => {
       .then(response => response.json())
       .then(json => {
         const result = json.choices[0].text;
-        assistantBox.innerHTML = marked(result);
+        assistantBox.innerHTML = result;
         // 完成后恢复按钮，并删除等待动画和提示
         submitBtn.disabled = false;
         submitBtn.innerHTML = `提交`;
