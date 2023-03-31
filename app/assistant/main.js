@@ -1,3 +1,6 @@
+// 引入marked库
+import marked from 'marked';
+
 const submitBtn = document.querySelector('#submit');
 const userBox = document.querySelector('#user');
 const assistantBox = document.querySelector('#assistant');
@@ -46,7 +49,7 @@ submitBtn.addEventListener('click', () => {
       .then(response => response.json())
       .then(json => {
         const result = json.choices[0].text;
-        assistantBox.innerHTML = result;
+        assistantBox.innerHTML = marked(result);
         // 完成后恢复按钮，并删除等待动画和提示
         submitBtn.disabled = false;
         submitBtn.innerHTML = `提交`;
