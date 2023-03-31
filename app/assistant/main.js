@@ -1,7 +1,6 @@
 const submitBtn = document.querySelector('#submit');
 const userBox = document.querySelector('#user');
 const assistantBox = document.querySelector('#assistant');
-const marked = require('marked');
 
 // 从local storage中获取数据
 window.onload = () => {
@@ -47,7 +46,7 @@ submitBtn.addEventListener('click', () => {
       .then(response => response.json())
       .then(json => {
         const result = json.choices[0].text;
-        assistantBox.innerHTML = marked(result);
+        assistantBox.innerHTML = marked.parse(result);
         // 完成后恢复按钮，并删除等待动画和提示
         submitBtn.disabled = false;
         submitBtn.innerHTML = `提交`;
