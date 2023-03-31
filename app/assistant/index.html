@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>Assistant</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Assistant</h1>
     <div class="form-container">
         <div class="form-row">
-            <label for="system">System:</label>
-            <textarea id="system" name="system" rows="5" cols="80"></textarea>
+            <div class="form-label">
+                <label for="system">System:</label>
+            </div>
+            <div class="form-field">
+                <textarea id="system" name="system" rows="5" cols="80"></textarea>
+            </div>
         </div>
         <div class="form-row">
-            <label for="user">User:</label>
-            <textarea id="user" name="user" rows="5" cols="80" required></textarea>
+            <div class="form-label">
+                <label for="user">User:</label>
+            </div>
+            <div class="form-field">
+                <textarea id="user" name="user" rows="5" cols="80" required></textarea>
+            </div>
         </div>
         <div class="form-row">
             <button id="submit">提交</button>
         </div>
         <div class="form-row">
-            <label for="assistant">Assistant:</label>
-            <textarea id="assistant" name="assistant" rows="20" cols="80" readonly>等待回复</textarea>
+            <div class="form-label">
+                <label for="assistant">Assistant:</label>
+            </div>
+            <div class="form-field">
+                <textarea id="assistant" name="assistant" rows="20" cols="80" readonly>等待回复</textarea>
+            </div>
         </div>
     </div>
-    
+
     <script src="main.js"></script>
 </body>
+
 </html>
