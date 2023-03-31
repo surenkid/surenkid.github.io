@@ -33,15 +33,12 @@
             <button id="submit">提交</button>
         </div>
         <div class="form-row">
-            <div class="form-label">
-                <label for="assistant">Assistant:</label>
-            </div>
             <div class="form-field">
-                <textarea id="assistant" name="assistant" rows="20" cols="80" readonly>等待回复</textarea>
+                <div id="assistant" name="assistant" class="markdown-body"></div>
             </div>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="main.js"></script>
 </body>
 
