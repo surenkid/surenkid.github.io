@@ -14,16 +14,22 @@ async function checkUrlSpeed(url) {
 
 async function updateSpeeds() {
     const speedListItems = document.querySelectorAll(".speedlist li");
+    const speedPromises = [];
+
     for (let i = 0; i < speedListItems.length; i++) {
         const url = speedListItems[i].querySelector("a").getAttribute("href");
-        const speed = await checkUrlSpeed(url);
-        const speedElement = document.getElementById(`lineMs${i}`);
-        if (speedElement) {
-            speedElement.innerHTML = `${speed}ms`;
-        } else {
-            console.warn(`Element with ID "lineMs${i}" not found.`);
-        }
+        const speedPromise = checkUrlSpeed(url).then(speed => {
+            const speedElement = document.getElementById(`lineMs${i}`);
+            if (speedElement) {
+                speedElement.innerHTML = `${speed}ms`;
+            } else {
+                console.warn(`Element with ID "lineMs${i}" not found.`);
+            }
+        });
+        speedPromises.push(speedPromise);
     }
+
+    await Promise.all(speedPromises);
 }
 
 updateSpeeds();
