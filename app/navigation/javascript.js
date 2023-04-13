@@ -17,7 +17,12 @@ async function updateSpeeds() {
     for (let i = 0; i < speedListItems.length; i++) {
         const url = speedListItems[i].querySelector("a").getAttribute("href");
         const speed = await checkUrlSpeed(url);
-        document.getElementById(`lineMs${i}`).innerHTML = `${speed}ms`;
+        const speedElement = document.getElementById(`lineMs${i}`);
+        if (speedElement) {
+            speedElement.innerHTML = `${speed}ms`;
+        } else {
+            console.warn(`Element with ID "lineMs${i}" not found.`);
+        }
     }
 }
 
