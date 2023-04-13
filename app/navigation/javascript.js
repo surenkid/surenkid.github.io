@@ -8,13 +8,12 @@ $('.speedlist li').each(function () {
     autourl[index] = url;
 
     // 设置要检测的组件ID
-    $('#lineMs' + index).html(str + 'ms');
+    $('#lineMs' + index).html(tim + 'ms');
 });
 
-function auto(url, index) {
-    var str = tim;
-    console.log(str);
-    $('#lineMs' + index).html(str + 'ms');
+function auto(url, index, time) {
+    console.log(time);
+    $('#lineMs' + index).html(time + 'ms');
 }
 
 function run() {
@@ -27,7 +26,7 @@ function run() {
             height: 1,
             style: 'display:none'
         }).error(function () {
-            auto(url, index);
+            auto(url, index, tim);
         });
     }
 }
