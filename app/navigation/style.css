@@ -487,6 +487,6 @@ p.footer a:hover {
 
     .bg-bubbles,
     .wrapper {
-        height: auto;
+        height: 100%;
     }
 }
