@@ -1,34 +1,24 @@
-var tim = 1;
-setInterval("tim++", 10);
+let tim = 1;
+setInterval(() => tim++, 10);
 
-var autourl = [];
-$('.speedlist li').each(function () {
-    var url = $(this).find('a').attr("href");
-    var index = $(this).index();
-    autourl[index] = url;
-
-    // 设置要检测的组件ID
-    $('#lineMs' + index).html(tim + 'ms');
-});
-
-function auto(url, index, time) {
-    console.log(time);
-    $('#lineMs' + index).html(time + 'ms');
+async function checkUrlSpeed(url) {
+    const startTime = tim;
+    try {
+        await fetch(url, { mode: "no-cors", cache: "no-store" });
+    } catch (error) {
+        // 忽略错误，因为我们只关心速度
+    }
+    const endTime = tim;
+    return endTime - startTime;
 }
 
-function run() {
-    for (var i = 0; i < autourl.length; i++) {
-        var url = autourl[i];
-        var index = i;
-        $('<img />', {
-            src: url + "/" + Math.random(),
-            width: 1,
-            height: 1,
-            style: 'display:none'
-        }).error(function () {
-            auto(url, index, tim);
-        });
+async function updateSpeeds() {
+    const speedListItems = document.querySelectorAll(".speedlist li");
+    for (let i = 0; i < speedListItems.length; i++) {
+        const url = speedListItems[i].querySelector("a").getAttribute("href");
+        const speed = await checkUrlSpeed(url);
+        document.getElementById(`lineMs${i}`).innerHTML = `${speed}ms`;
     }
 }
 
-run();
+updateSpeeds();
