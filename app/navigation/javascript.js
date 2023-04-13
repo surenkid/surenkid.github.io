@@ -1,37 +1,35 @@
 var tim = 1;
 setInterval("tim++", 10);
-var autourl = new Array();
-for (i = 0; i <= 6; i++) {
-    autourl[i] = $('.speedlist li').eq(i).find('a').attr("href");
-}
-function auto(url) {
+
+var autourl = [];
+$('.speedlist li').each(function () {
+    var url = $(this).find('a').attr("href");
+    var index = $(this).index();
+    autourl[index] = url;
+
+    // 设置要检测的组件ID
+    $('#lineMs' + index).html(str + 'ms');
+});
+
+function auto(url, index) {
     var str = tim;
     console.log(str);
-    if (url == autourl[0]) {
-        $('#lineMs0').html(str + 'ms')
-    }
-    if (url == autourl[1]) {
-        $('#lineMs1').html(str + 'ms')
-    }
-    if (url == autourl[2]) {
-        $('#lineMs2').html(str + 'ms')
-    }
-    if (url == autourl[3]) {
-        $('#lineMs3').html(str + 'ms')
-    }
-    if (url == autourl[4]) {
-        $('#lineMs4').html(str + 'ms')
-    }
-    if (url == autourl[5]) {
-        $('#lineMs5').html(str + 'ms')
-    }
-    if (url == autourl[6]) {
-        $('#lineMs6').html(str + 'ms')
-    }
+    $('#lineMs' + index).html(str + 'ms');
 }
+
 function run() {
     for (var i = 0; i < autourl.length; i++) {
-        document.write("<img src=" + autourl[i] + "/" + Math.random() + " width=1 height=1 onerror=auto('" + autourl[i] + "') style='display:none'>");
+        var url = autourl[i];
+        var index = i;
+        $('<img />', {
+            src: url + "/" + Math.random(),
+            width: 1,
+            height: 1,
+            style: 'display:none'
+        }).error(function () {
+            auto(url, index);
+        });
     }
 }
-run()
+
+run();
