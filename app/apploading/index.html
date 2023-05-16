@@ -108,32 +108,24 @@
             loaderElement.style.display = 'block';
             retryButton.style.display = 'none';
 
-            const storedBestUrl = localStorage.getItem('bestUrl');
-            const storedBestUrlTimestamp = localStorage.getItem('bestUrlTimestamp');
-            const oneHour = 60 * 60 * 1000;
-            if (storedBestUrl && storedBestUrlTimestamp && new Date().getTime() - storedBestUrlTimestamp < oneHour) {
-                window.location.href = storedBestUrl;
-            } else {
-                const speedResults = await Promise.all(targetUrls.map(url => measureSpeed(url, suffix)));
-                let bestUrl = null;
-                let bestTime = null;
-                speedResults.forEach((time, index) => {
-                    if (time !== null && (bestTime === null || time < bestTime)) {
-                        bestTime = time;
-                        bestUrl = targetUrls[index];
-                    }
-                });
-                if (bestUrl) {
-                    localStorage.setItem('bestUrl', bestUrl);
-                    localStorage.setItem('bestUrlTimestamp', new Date().getTime());
-                    statusElement.textContent = '即将进入到最快的线路...';
-                    window.location.href = bestUrl;
-                } else {
-                    statusElement.textContent = '所有线路都无法访问，请稍后再试。';
-                    loaderElement.style.display = 'none';
-                    retryButton.style.display = 'block';
+            const speedResults = await Promise.all(targetUrls.map(url => measureSpeed(url, suffix)));
+            let bestUrl = null;
+            let bestTime = null;
+            speedResults.forEach((time, index) => {
+                if (time !== null && (bestTime === null || time < bestTime)) {
+                    bestTime = time;
+                    bestUrl = targetUrls[index];
                 }
+            });
+            if (bestUrl) {
+                statusElement.textContent = '即将进入到最快的线路...';
+                window.location.href = bestUrl;
+            } else {
+                statusElement.textContent = '所有线路都无法访问，请稍后再试。';
+                loaderElement.style.display = 'none';
+                retryButton.style.display = 'block';
             }
+
         }
         // 页面加载完成后执行
         window.addEventListener('DOMContentLoaded', async () => {
