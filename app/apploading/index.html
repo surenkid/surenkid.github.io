@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在加载</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        button {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        const targetUrl = getParameterByName('url') || 'https://surenkid.github.io';
+        // 配置目标网址
+        const targetUrls = [targetUrl];
+        const suffix = getParameterByName('suffix');
+        // 测速函数
+        async function measureSpeed(url, suffix) {
+            const startTime = new Date().getTime();
+            const timeout = 10000; // 设置超时时间为10秒
+            const testUrl = suffix ? url + suffix : url;
+            try {
+                const controller = new AbortController();
+                const signal = controller.signal;
+                // 设置超时处理
+                const timeoutId = setTimeout(() => {
+                    controller.abort();
+                }, timeout);
+                const response = await fetch(testUrl, { mode: 'no-cors', cache: 'no-cache', signal });
+                clearTimeout(timeoutId); // 清除超时处理
+                const endTime = new Date().getTime();
+                return endTime - startTime;
+            } catch (error) {
+                return null;
+            }
+        }
+        async function redirectToFastestUrl() {
+            const title = getParameterByName('title') || '正在加载';
+            document.title = title;
+            document.querySelector('h1').textContent = title;
+            const statusElement = document.getElementById('status');
+            const loaderElement = document.querySelector('.loader');
+            const retryButton = document.getElementById('retryButton');
+            statusElement.textContent = '正在加载，请稍候...';
+            loaderElement.style.display = 'block';
+            retryButton.style.display = 'none';
+
+            const storedBestUrl = localStorage.getItem('bestUrl');
+            const storedBestUrlTimestamp = localStorage.getItem('bestUrlTimestamp');
+            const oneHour = 60 * 60 * 1000;
+            if (storedBestUrl && storedBestUrlTimestamp && new Date().getTime() - storedBestUrlTimestamp < oneHour) {
+                window.location.href = storedBestUrl;
+            } else {
+                const speedResults = await Promise.all(targetUrls.map(url => measureSpeed(url, suffix)));
+                let bestUrl = null;
+                let bestTime = null;
+                speedResults.forEach((time, index) => {
+                    if (time !== null && (bestTime === null || time < bestTime)) {
+                        bestTime = time;
+                        bestUrl = targetUrls[index];
+                    }
+                });
+                if (bestUrl) {
+                    localStorage.setItem('bestUrl', bestUrl);
+                    localStorage.setItem('bestUrlTimestamp', new Date().getTime());
+                    statusElement.textContent = '即将进入到最快的线路...';
+                    window.location.href = bestUrl;
+                } else {
+                    statusElement.textContent = '所有线路都无法访问，请稍后再试。';
+                    loaderElement.style.display = 'none';
+                    retryButton.style.display = 'block';
+                }
+            }
+        }
+        // 页面加载完成后执行
+        window.addEventListener('DOMContentLoaded', async () => {
+            redirectToFastestUrl();
+        });
+    </script>
+</head>
+
+<body>
+    <h1>正在加载</h1>
+    <p id="status">正在加载，请稍候...</p>
+    <div class="loader"></div>
+    <button id="retryButton" onclick="redirectToFastestUrl()" style="display: none;">重试</button>
+</body>
+
+</html>
