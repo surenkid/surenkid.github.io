@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Redirecting</title>
+    <style>
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 24px;
+        }
+
+        .loading-icon {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-container">
+        <span class="loading-icon">Redirecting...</span>
+    </div>
+
+    <script>
+        function getUrlParameter(url) {
+        if (!url) url = window.location.href;
+        var parts = url.split('?');
+        if (parts.length < 2) return null;
+        return parts[1];
+        }
+
+        var encodedUrl = getUrlParameter();
+        if (encodedUrl) {
+            var decodedUrl = atob(encodedUrl);
+
+            var loadingContainer = document.querySelector('.loading-container');
+            loadingContainer.style.display = 'flex';
+
+            window.location.replace(decodedUrl);
+        }
+    </script>
+</body>
+
+</html>
