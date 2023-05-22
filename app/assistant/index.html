@@ -94,10 +94,12 @@
             top: 0;
             background-color: rgba(0, 0, 0, .3);
             z-index: 90;
-            opacity: 0;
-            visibility: hidden;
             cursor: pointer;
-            transition: all 120ms ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 250ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         @media screen and (max-width: 1188px) and (max-height: 888px) {
@@ -118,7 +120,8 @@
             .nav {
                 position: relative;
                 margin-left: -250px;
-                transition: margin-left 120ms ease-in-out;
+                transition: margin-left 250ms;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             .show-nav .nav {
@@ -153,10 +156,15 @@
                 display: block;
             }
 
+            .mainContent {
+                width: 100%;
+            }
+
             .nav {
                 position: absolute !important;
                 left: -250px;
-                transition: left 120ms ease-in-out;
+                transition: left 250ms;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             .show-nav .nav {
@@ -165,8 +173,8 @@
             }
 
             .show-nav .overlay {
-                opacity: 1;
                 visibility: visible;
+                opacity: 1;
             }
 
             #sysDialog {
@@ -227,6 +235,7 @@
             padding: 5px 7px;
             border-radius: 4px;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .top_menu .toggler:hover {
@@ -326,14 +335,6 @@
         .allList::-webkit-scrollbar-thumb:hover,
         .sysDetail::-webkit-scrollbar-thumb:hover {
             background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .messages .message {
-            clear: both;
-            overflow: hidden;
-            margin-bottom: 20px;
-            transition: all 0.5s linear;
-            opacity: 0;
         }
 
         #chatlog {
@@ -445,7 +446,7 @@
             color: #bbb;
             outline: none;
             cursor: pointer;
-            transition: color 0.2s;
+            transition: color 250ms;
         }
 
         .m-mdic-copy-wrapper button.u-mdic-copy-btn:hover {
@@ -486,7 +487,7 @@
 
         .bottom_wrapper .message_input_wrapper {
             border: none;
-            width: calc(100% - 143px);
+            width: calc(100% - 139px);
             position: relative;
             text-align: left;
         }
@@ -496,19 +497,19 @@
             border: none;
             outline: none;
             resize: none;
-            background: var(--main-back);
+            background-color: var(--main-back);
             color: var(--chat-text-color);
             height: 47px;
             font-size: 16px;
             max-height: 200px;
-            padding: 13px 0 13px 16px;
+            padding: 13px 0 13px 13px;
             width: 100%;
             display: block;
-            transition: background 0.3s;
+            transition: background-color 250ms;
         }
 
         .bottom_wrapper .message_input_wrapper .message_input_text:focus {
-            background: var(--code-color);
+            background-color: var(--code-color);
         }
 
         .bottom_wrapper .message_input_wrapper .message_input_text::-webkit-scrollbar {
@@ -528,11 +529,11 @@
             padding: 0;
             color: #fff;
             cursor: pointer;
-            transition: all 0.2s linear;
+            transition: all 250ms;
             text-align: center;
             float: right;
             position: absolute;
-            right: 65px;
+            right: 63px;
             bottom: 10px;
             cursor: not-allowed;
         }
@@ -624,8 +625,8 @@
             border-radius: 30px;
             cursor: pointer;
             position: relative;
-            -webkit-transition: 0.3s ease;
-            transition: 0.3s ease;
+            -webkit-transition: all 250ms;
+            transition: all 250ms;
         }
 
         .switch-slide-label:after {
@@ -641,13 +642,14 @@
             top: 1px;
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
-            -webkit-transition: 0.3s ease;
-            transition: 0.3s ease;
+            -webkit-transition: all 250ms;
+            transition: all 250ms;
         }
 
         .switch-slide input:checked+label {
             background: #99c959;
-            transition: 0.3s ease;
+            -webkit-transition: all 250ms;
+            transition: all 250ms;
         }
 
         .switch-slide input:checked+label:after {
@@ -1091,7 +1093,6 @@
 
         .links {
             text-align: center;
-            display: none;
         }
 
         .links a {
@@ -1109,6 +1110,7 @@
 
         .allList {
             width: 100%;
+            position: relative;
             flex: 1;
             overflow-y: auto;
         }
@@ -1174,12 +1176,18 @@
             pointer-events: none;
         }
 
-        .headLi .folderInfo,
+        .headLi .folderInfo {
+            position: absolute;
+            left: 40px;
+            height: 40px;
+            max-width: calc(100% - 115px);
+        }
+
         .chatLi .chatInfo {
             position: absolute;
-            left: 45px;
+            left: 40px;
             height: 40px;
-            max-width: calc(100% - 100px);
+            max-width: calc(100% - 90px);
         }
 
         .folderInfo *,
@@ -1218,7 +1226,21 @@
             visibility: hidden;
             display: flex;
             color: #777;
-            margin-right: 5px;
+            margin-right: 2px;
+        }
+
+        .folderLi .chatLi>svg {
+            margin-left: 5px;
+        }
+
+        .folderLi .chatLi .chatInfo {
+            left: 35px;
+            max-width: calc(100% - 85px);
+        }
+
+        .folderLi .chatLi #activeChatEdit {
+            left: 32px;
+            width: calc(100% - 60px)
         }
 
         .folderLi:hover {
@@ -1243,13 +1265,14 @@
             visibility: visible !important;
         }
 
+        .folderOption>svg:hover,
         .chatOption>svg:hover {
             color: #444;
         }
 
         #activeChatEdit {
             position: absolute;
-            left: 42px;
+            left: 37px;
             font-size: 16px;
             border-radius: 2px;
             color: var(--chat-text-color);
@@ -1259,7 +1282,7 @@
             pointer-events: auto;
             height: 24px;
             line-height: 24px;
-            width: calc(100% - 75px);
+            width: calc(100% - 65px);
             padding: 20px 3px;
             z-index: 1;
         }
@@ -1323,7 +1346,8 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            margin-top: -12px;
+            margin-left: -13px;
         }
 
         #voiceRecIcon>svg .animVoice {
@@ -1505,6 +1529,7 @@
             justify-content: center;
             align-items: center;
             background: rgba(0, 0, 0, .4);
+            -webkit-tap-highlight-color: transparent;
         }
 
         #sysDialog {
@@ -1975,7 +2000,7 @@
                 <div class="divider"></div>
                 <div class="links">
                     <a href="https://github.com/xqdoo00o" target="_blank"
-                        rel="noopener noreferrer">Maintainer</a>
+                        rel="noopener noreferrer">Author</a>
                 </div>
             </div>
         </nav>
@@ -2976,8 +3001,14 @@
                 })
             }
             voices.sort((a, b) => {
-                if (a.lang.slice(0, 2) === b.lang.slice(0, 2)) return 0;
-                return (a.lang < b.lang) ? 1 : -1; // 中文在前"z"
+                if (a.lang.slice(0, 2) === b.lang.slice(0, 2)) {
+                    if (a.lang.slice(0, 2) === "zh") {
+                        return (a.lang === b.lang) ? 0 : (a.lang > b.lang) ? 1 : -1; // zh-CN 在前
+                    } else {
+                        return 0
+                    }
+                }
+                return (a.lang < b.lang) ? 1 : -1; // 中文"z"在前
             });
             voices.map(item => {
                 if (item.name.match(/^(Google |Microsoft )/)) {
@@ -3231,12 +3262,17 @@
             let headers = {"Content-Type": "application/json"};
             if (customAPIKey) headers["Authorization"] = "Bearer " + customAPIKey;
             let subCtrl = new AbortController();
-            const subRes = await fetch(apiHost + "v1/dashboard/billing/subscription", {
-                headers,
-                signal: subCtrl.signal,
-                credentials: "omit"
-            });
-            if (subRes.status !== 200) {
+            setTimeout(() => {
+                subCtrl.abort();
+            }, 20000);
+            let subRes;
+            try {
+                subRes = await fetch(apiHost + "v1/dashboard/billing/subscription", {
+                    headers,
+                    signal: subCtrl.signal
+                });
+                if (subRes.status !== 200) return;
+            } catch (e) {
                 return;
             }
             const subData = await subRes.json();
@@ -3256,8 +3292,7 @@
                 try {
                     const useRes = await fetch(urlUsage + `start_date=${formatDate(subDate)}&end_date=${formatDate(nowDate)}`, {
                         headers,
-                        signal: useCtrl.signal,
-                        credentials: "omit"
+                        signal: useCtrl.signal
                     });
                     const useJson = await useRes.json();
                     usedData = useJson.total_usage / 100;
@@ -3287,8 +3322,7 @@
                         return new Promise((res, rej) => {
                             fetch(urlUsage + url, {
                                 headers,
-                                signal: useCtrl.signal,
-                                credentials: "omit"
+                                signal: useCtrl.signal
                             }).then(response => {
                                 response.json().then(json => res(json.total_usage));
                             }).catch(() => {
@@ -3575,7 +3609,7 @@
             }
             mdOption.onclick = mdOptionEvent;
         }
-        let allEle = chatListEle.parentElement;
+        let allListEle = chatListEle.parentElement;
         let folderData = [];
         let chatsData = [];
         let chatIdxs = [];
@@ -3635,7 +3669,7 @@
         folderListEle.ondragenter = chatListEle.ondragenter = function (ev) {
             ev.preventDefault();
             if (ev.target === dragLi) return;
-            allEle.querySelectorAll(".dragingChat").forEach(ele => {
+            allListEle.querySelectorAll(".dragingChat").forEach(ele => {
                 ele.classList.remove("dragingChat");
             })
             if (dragType === "chat") {
@@ -3710,7 +3744,7 @@
         }
         folderListEle.ondragend = chatListEle.ondragend = (ev) => {
             document.getElementsByClassName("dragingLi")[0].classList.remove("dragingLi");
-            allEle.querySelectorAll(".dragingChat").forEach(ele => {
+            allListEle.querySelectorAll(".dragingChat").forEach(ele => {
                 ele.classList.remove("dragingChat");
             })
             dragType = dragIdx = dragLi = void 0;
@@ -3738,9 +3772,7 @@
             }
             if (folderNewIdx === -1) {
                 for (let i = folderIdx + 1; i < folderData.length; i++) {
-                    if (folderData[i].idxs.length) {
-                        folderNewIdx = i;
-                    }
+                    if (folderData[i].idxs.length) folderNewIdx = i;
                 }
             }
             if (folderNewIdx !== -1) {
@@ -3780,9 +3812,26 @@
                 })
                 let len = idxs.filter(j => {return activeChatIdx > j}).length;
                 if (len) activeChatIdx -= len;
+                if (activeChatIdx === -1) {
+                    addNewChat();
+                    activeChatIdx = 0;
+                    chatEleAdd(activeChatIdx);
+                }
                 updateChats();
                 activeChat();
             }
+        }
+        const folderAddChat = (folderIdx, headEle) => {
+            endAll();
+            let chat = {name: "新的会话", data: []};
+            chatsData.push(chat);
+            activeChatIdx = chatsData.length - 1;
+            folderData[folderIdx].idxs.push(activeChatIdx);
+            let ele = chatEleAdd(activeChatIdx, false)
+            headEle.nextElementSibling.appendChild(ele);
+            updateFolder(folderIdx);
+            updateChats();
+            activeChat(ele);
         }
         const folderEleEvent = function (ev) {
             ev.preventDefault();
@@ -3798,6 +3847,8 @@
                         parent.classList.add("activeFolder");
                     }
                 }
+            } else if (ev.target.dataset.type === "folderAddChat") {
+                folderAddChat(idx, this);
             } else if (ev.target.dataset.type === "folderEdit") {
                 toEditName(idx, this, 0);
             } else if (ev.target.dataset.type === "folderDel") {
@@ -3823,8 +3874,11 @@
                     <div class="folderName"></div>
                     <div class="folderNum"></div>
                 </div>
-                <div class="folderOption"><svg data-type="folderEdit" style="margin-right:2px" width="24" height="24" role="img"><title>编辑</title><use xlink:href="#chatEditIcon" /></svg>
-                <svg data-type="folderDel" width="24" height="24" role="img"><title>删除</title><use xlink:href="#delIcon" /></svg></div>`
+                <div class="folderOption">
+                    <svg data-type="folderAddChat" width="24" height="24" role="img"><title>新建会话</title><use xlink:href="#addIcon" /></svg>
+                    <svg data-type="folderEdit" width="24" height="24" role="img"><title>编辑</title><use xlink:href="#chatEditIcon" /></svg>
+                    <svg data-type="folderDel" width="24" height="24" role="img"><title>删除</title><use xlink:href="#delIcon" /></svg>
+                </div>`
             headEle.children[1].children[0].textContent = folder.name;
             headEle.children[1].children[1].textContent = folder.idxs.length + "个会话";
             folderEle.appendChild(headEle);
@@ -3866,7 +3920,7 @@
                     <div class="chatName"></div>
                     <div class="chatPre"></div>
                 </div>
-                <div class="chatOption"><svg data-type="chatEdit" style="margin-right:2px" width="24" height="24" role="img"><title>编辑</title><use xlink:href="#chatEditIcon" /></svg>
+                <div class="chatOption"><svg data-type="chatEdit" width="24" height="24" role="img"><title>编辑</title><use xlink:href="#chatEditIcon" /></svg>
                 <svg data-type="chatDel" width="24" height="24" role="img"><title>删除</title><use xlink:href="#delIcon" /></svg></div>`
             if (appendChat) chatListEle.appendChild(chatEle);
             initChatEle(idx, chatEle);
@@ -3881,7 +3935,7 @@
         };
         const delChat = (idx, ele, folderIdx, inFolderIdx) => {
             if (confirmAction("是否删除会话?")) {
-                endAll();
+                if (idx === activeChatIdx) endAll();
                 if (folderIdx !== void 0) {
                     let folder = folderData[folderIdx];
                     folder.idxs.splice(inFolderIdx, 1);
@@ -3906,9 +3960,7 @@
                         } else {
                             let folderNewIdx = -1;
                             for (let i = folderData.length - 1; i >= 0; i--) {
-                                if (folderData[i].idxs.length) {
-                                    folderNewIdx = i;
-                                }
+                                if (folderData[i].idxs.length) folderNewIdx = i;
                             }
                             if (folderNewIdx !== -1) {
                                 activeChatIdx = folderData[folderNewIdx].idxs[0];
@@ -3924,9 +3976,7 @@
                 folderData.forEach(item => {
                     if (item.idxs.length) {
                         item.idxs.forEach((i, ix) => {
-                            if (i > idx) {
-                                item.idxs[ix] = i - 1;
-                            }
+                            if (i > idx) item.idxs[ix] = i - 1;
                         })
                     }
                 })
@@ -3978,6 +4028,7 @@
                 inputEle.value = folderData[idx].name;
                 operateFolderIdx = idx;
             }
+            inputEle.setSelectionRange(0, 0);
             inputEle.focus();
             inputEle.onkeydown = (e) => {
                 if (e.keyCode === 13) {
@@ -4049,10 +4100,10 @@
         }
         const activeChat = (ele) => {
             data = chatsData[activeChatIdx]["data"];
-            allEle.querySelectorAll(".activeChatLi").forEach(ele => {
+            allListEle.querySelectorAll(".activeChatLi").forEach(ele => {
                 ele.classList.remove("activeChatLi");
             })
-            allEle.querySelectorAll(".activeFolder").forEach(ele => {
+            allListEle.querySelectorAll(".activeFolder").forEach(ele => {
                 ele.classList.remove("activeFolder")
             })
             if (!ele) ele = getChatEle(activeChatIdx);
@@ -4083,6 +4134,8 @@
                     }
                 }
             }
+            let top = ele.offsetTop + ele.offsetHeight - allListEle.clientHeight;
+            if (allListEle.scrollTop < top) allListEle.scrollTop = top;
             localStorage.setItem("activeChatIdx", activeChatIdx);
         };
         newChatEle.onclick = () => {
@@ -4091,7 +4144,6 @@
             activeChatIdx = chatsData.length - 1;
             chatEleAdd(activeChatIdx);
             activeChat(chatListEle.lastElementChild);
-            chatListEle.parentElement.scrollTop = chatListEle.parentElement.scrollHeight;
         };
         const initChats = () => {
             let localChats = localStorage.getItem("chats");
@@ -5156,8 +5208,6 @@
                 notyf.error("请求超时，请稍后重试！");
                 stopLoading();
             }, 30000);
-            let headers = {"Content-Type": "application/json"};
-            if (customAPIKey) headers["Authorization"] = "Bearer " + customAPIKey;
             let isRefresh = refreshIdx !== void 0;
             if (isRefresh) {
                 currentResEle = chatlog.children[systemRole ? refreshIdx - 1 : refreshIdx];
@@ -5176,19 +5226,21 @@
                     endSpeak();
                     autoVoiceDataIdx = currentVoiceIdx = idx;
                 }
-            }
-            let dataSlice;
-            if (long) {
-                idx = isRefresh ? refreshIdx : data.length - 1;
-                dataSlice = [data[idx - 1], data[idx]];
-                if (systemRole) {dataSlice.unshift(data[0]);}
-            } else if (enableCont) {
-                dataSlice = data.slice(0, idx);
-            } else {
-                dataSlice = [data[idx - 1]];
-                if (systemRole) {dataSlice.unshift(data[0]);}
-            }
+            };
             try {
+                let dataSlice;
+                if (long) {
+                    idx = isRefresh ? refreshIdx : data.length - 1;
+                    dataSlice = [data[idx - 1], data[idx]];
+                    if (systemRole) {dataSlice.unshift(data[0]);}
+                } else if (enableCont) {
+                    dataSlice = data.slice(0, idx);
+                } else {
+                    dataSlice = [data[idx - 1]];
+                    if (systemRole) {dataSlice.unshift(data[0]);}
+                }
+                let headers = {"Content-Type": "application/json"};
+                if (customAPIKey) headers["Authorization"] = "Bearer " + customAPIKey;
                 const res = await fetch(apiHost + API_URL, {
                     method: "POST",
                     headers,
@@ -5199,8 +5251,7 @@
                         temperature: roleTemp,
                         top_p: roleNature
                     }),
-                    signal: controller.signal,
-                    credentials: "omit"
+                    signal: controller.signal
                 });
                 clearTimeout(controllerId);
                 controllerId = void 0;
@@ -5226,6 +5277,7 @@
                         if (!done) {
                             value = decoder.decode(value);
                             let chunks = value.match(/[^\n]+/g);
+                            if (!chunks) return readChunk();
                             for (let i = 0; i < chunks.length; i++) {
                                 let chunk = chunks[i];
                                 if (chunk) {
