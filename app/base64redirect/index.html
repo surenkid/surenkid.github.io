@@ -10,10 +10,12 @@
             align-items: center;
             height: 100vh;
             font-size: 24px;
+            background-color: #f8f8f8;
         }
 
         .loading-icon {
-            animation: spin 1s linear infinite;
+            animation: spin 2s linear infinite;
+            margin-right: 10px;
         }
 
         @keyframes spin {
@@ -30,15 +32,21 @@
 
 <body>
     <div class="loading-container">
-        <span class="loading-icon">Redirecting...</span>
+        <div class="loading-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3498db" width="40px" height="40px">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M7 10l5 5 5-5H7z" />
+            </svg>
+        </div>
+        <span>Redirecting...</span>
     </div>
 
     <script>
         function getUrlParameter(url) {
-        if (!url) url = window.location.href;
-        var parts = url.split('?');
-        if (parts.length < 2) return null;
-        return parts[1];
+            if (!url) url = window.location.href;
+            var parts = url.split('?');
+            if (parts.length < 2) return null;
+            return parts[1];
         }
 
         var encodedUrl = getUrlParameter();
