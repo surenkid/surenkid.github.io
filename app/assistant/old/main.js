@@ -68,7 +68,7 @@ submitBtn.addEventListener('click', async () => {
       }
 
       const json = JSON.parse(result);
-      const assistantResult = json.choices[0].text;
+      const assistantResult = json.choices[0].content;
       assistantBox.innerHTML = marked.parse(assistantResult);
 
       // Enable the button and remove the waiting animation and hint after completion
