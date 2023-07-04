@@ -21,6 +21,16 @@ window.onload = () => {
   }
 };
 
+function typeWriter(element, text, index, speed, callback) {
+  if (index < text.length) {
+    element.innerHTML = marked.parse(text.slice(0, index + 1));
+    index++;
+    setTimeout(() => typeWriter(element, text, index, speed, callback), speed);
+  } else {
+    callback();
+  }
+}
+
 submitBtn.addEventListener('click', async () => {
   if (userBox.checkValidity()) {
     const systemValue = systemBox.value;
@@ -52,33 +62,34 @@ submitBtn.addEventListener('click', async () => {
     });
     
     if (response.ok) {
-      const reader = response.body.getReader();
-      const textDecoder = new TextDecoder();
       let result = '';
 
-      while (true) {
-        const { done, value } = await reader.read();
-
-        if (done) {
-          break;
-        }
-
-        const chunk = textDecoder.decode(value);
+      await readStream(response.body, (chunk) => {
         result += chunk;
-      }
 
-      const json = JSON.parse(result);
-      const assistantResult = json.choices[0].message.content;
-      assistantBox.innerHTML = marked.parse(assistantResult);
+        try {
+          const json = JSON.parse(result);
+          const assistantResult = json.choices[0].message.content;
 
-      // Enable the button and remove the waiting animation and hint after completion
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = `Submit`;
+          // Clear the existing content in the assistant box
+          assistantBox.innerHTML = '';
 
-      // Save the data to local storage
-      localStorage.setItem('system', systemBox.value);
-      localStorage.setItem('user', userBox.value);
-      localStorage.setItem('assistant', assistantResult);
+          // Type the response with a typewriter effect and render Markdown
+          typeWriter(assistantBox, assistantResult, 0, 50, () => {
+            // Enable the button and remove the waiting animation and hint after completion
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `Submit`;
+
+            // Save the data to local storage
+            localStorage.setItem('system', systemBox.value);
+            localStorage.setItem('user', userBox.value);
+            localStorage.setItem('assistant', assistantResult);
+          });
+
+        } catch (error) {
+          // Ignore incomplete JSON data
+        }
+      });
     } else {
       console.error('Error:', response.status);
     }
