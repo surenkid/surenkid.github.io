@@ -42,10 +42,11 @@ submitBtn.addEventListener('click', () => {
     submitBtn.disabled = true;
     submitBtn.innerHTML = `思考中...`;
 
-    fetch('https://api.aigcfun.com/api/v1/text?key=FCF3CF2371018C3BD8', {
+    fetch('https://ai.fakeopen.com/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer pk-this-is-a-real-free-pool-token-for-everyone'
       },
       body: JSON.stringify(payload)
     })
