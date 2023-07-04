@@ -42,30 +42,46 @@ submitBtn.addEventListener('click', () => {
     submitBtn.disabled = true;
     submitBtn.innerHTML = `思考中...`;
 
-    fetch('https://ai.fakeopen.com/v1/chat/completions', {
+    const response = await fetch('https://ai.fakeopen.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer pk-this-is-a-real-free-pool-token-for-everyone'
       },
       body: JSON.stringify(payload)
-    })
-      .then(response => response.json())
-      .then(json => {
-        const result = json.choices[0].text;
-        assistantBox.innerHTML = marked.parse(result);
-        // 完成后恢复按钮，并删除等待动画和提示
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `提交`;
+    });
+    
+    if (response.ok) {
+      const reader = response.body.getReader();
+      const textDecoder = new TextDecoder();
+      let result = '';
 
-        // 将数据保存到local storage中
-        localStorage.setItem('system', systemBox.value);
-        localStorage.setItem('user', userBox.value);
-        localStorage.setItem('assistant', result);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+      while (true) {
+        const { done, value } = await reader.read();
+
+        if (done) {
+          break;
+        }
+
+        const chunk = textDecoder.decode(value);
+        result += chunk;
+      }
+
+      const json = JSON.parse(result);
+      const assistantResult = json.choices[0].text;
+      assistantBox.innerHTML = marked.parse(assistantResult);
+
+      // Enable the button and remove the waiting animation and hint after completion
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `Submit`;
+
+      // Save the data to local storage
+      localStorage.setItem('system', systemBox.value);
+      localStorage.setItem('user', userBox.value);
+      localStorage.setItem('assistant', assistantResult);
+    } else {
+      console.error('Error:', response.status);
+    }
   }
 });
 
