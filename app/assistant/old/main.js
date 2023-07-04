@@ -21,32 +21,6 @@ window.onload = () => {
   }
 };
 
-async function readStream(stream, onChunk) {
-  const reader = stream.getReader();
-  const textDecoder = new TextDecoder();
-
-  while (true) {
-    const { done, value } = await reader.read();
-
-    if (done) {
-      break;
-    }
-
-    const chunk = textDecoder.decode(value);
-    onChunk(chunk);
-  }
-}
-
-function typeWriter(element, text, index, speed, callback) {
-  if (index < text.length) {
-    element.innerHTML = marked.parse(text.slice(0, index + 1));
-    index++;
-    setTimeout(() => typeWriter(element, text, index, speed, callback), speed);
-  } else {
-    callback();
-  }
-}
-
 submitBtn.addEventListener('click', async () => {
   if (userBox.checkValidity()) {
     const systemValue = systemBox.value;
@@ -78,34 +52,33 @@ submitBtn.addEventListener('click', async () => {
     });
     
     if (response.ok) {
+      const reader = response.body.getReader();
+      const textDecoder = new TextDecoder();
       let result = '';
 
-      await readStream(response.body, (chunk) => {
-        result += chunk;
+      while (true) {
+        const { done, value } = await reader.read();
 
-        try {
-          const json = JSON.parse(result);
-          const assistantResult = json.choices[0].message.content;
-
-          // Clear the existing content in the assistant box
-          assistantBox.innerHTML = '';
-
-          // Type the response with a typewriter effect and render Markdown
-          typeWriter(assistantBox, assistantResult, 0, 50, () => {
-            // Enable the button and remove the waiting animation and hint after completion
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = `Submit`;
-
-            // Save the data to local storage
-            localStorage.setItem('system', systemBox.value);
-            localStorage.setItem('user', userBox.value);
-            localStorage.setItem('assistant', assistantResult);
-          });
-
-        } catch (error) {
-          // Ignore incomplete JSON data
+        if (done) {
+          break;
         }
-      });
+
+        const chunk = textDecoder.decode(value);
+        result += chunk;
+      }
+
+      const json = JSON.parse(result);
+      const assistantResult = json.choices[0].message.content;
+      assistantBox.innerHTML = marked.parse(assistantResult);
+
+      // Enable the button and remove the waiting animation and hint after completion
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `Submit`;
+
+      // Save the data to local storage
+      localStorage.setItem('system', systemBox.value);
+      localStorage.setItem('user', userBox.value);
+      localStorage.setItem('assistant', assistantResult);
     } else {
       console.error('Error:', response.status);
     }
