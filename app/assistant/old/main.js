@@ -21,6 +21,22 @@ window.onload = () => {
   }
 };
 
+async function readStream(stream, onChunk) {
+  const reader = stream.getReader();
+  const textDecoder = new TextDecoder();
+
+  while (true) {
+    const { done, value } = await reader.read();
+
+    if (done) {
+      break;
+    }
+
+    const chunk = textDecoder.decode(value);
+    onChunk(chunk);
+  }
+}
+
 function typeWriter(element, text, index, speed, callback) {
   if (index < text.length) {
     element.innerHTML = marked.parse(text.slice(0, index + 1));
