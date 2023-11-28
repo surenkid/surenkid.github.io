@@ -27,16 +27,16 @@ title: 关于
 
 ---
 
-本站还有一个兄弟站：[三思屋](https://3sv.uum.cc/)，建立于2006年9月，是目前持续更新的另一个网站，主要分享一些有价值的内容。
+本站还有一个兄弟站：[三思屋](https://3sv.8dry.com/)，建立于2006年9月，是目前持续更新的另一个网站，主要分享一些有价值的内容。
 
-[![三思屋banner](https://static.ktsee.com/s1/2016/05/20160502121945434.jpg)](https://3sv.uum.cc/p/about.html)
+[![三思屋banner](https://static.ktsee.com/s1/2016/05/20160502121945434.jpg)](https://3sv.8dry.com/p/about.html)
 
-关于它的介绍，可以查看当年建站时写的[关于页面](https://3sv.uum.cc/p/about.html)，也同时缅怀那段青葱岁月。
+关于它的介绍，可以查看当年建站时写的[关于页面](https://3sv.8dry.com/p/about.html)，也同时缅怀那段青葱岁月。
 
 ## 时间线
 
 - 2023年11月迁移[看天博客](https://surenkid.github.io/)到surenkid.github.io
-- 2022年7月迁移[三思屋](https://3sv.uum.cc/)与[看天博客](https://surenkid.github.io/)到新域名
+- 2022年7月迁移[三思屋](https://3sv.8dry.com/)与[看天博客](https://surenkid.github.io/)到新域名
 - 2019年2月注册域名123455.xyz
 - 2014年9月创建[看天博客](https://surenkid.github.io/)
 - 2010年1月注册域名ktsee.com
