@@ -13,7 +13,7 @@ title: 数码清单
 | 蜗牛星际 C 款                                          | J1900+8G RAM+32G SSD+1T HDD*4 | DSM 6.2.3(DS918+)                                            | 照片，视频，文件存储备份         |
 | 斐讯N1                                                 | S905D+2G RAM+8G ROM           | 小钢炮                                                       | 内网穿透，科学上网，网盘        |
 | 玩客云                                                 | S805+1G RAM+8G ROM+16G SSD    | [Armbian_20.11](https://www.right.com.cn/forum/thread-4103842-1-5.html) | 内网穿透，科学上网 |
-| [升腾C30](https://3sv.8dry.com/2022/07/c3035nas.html) | G-T40N+4G RAM+2T HDD          | CentOS 7 2009                                                | 闲置                       |
+| [升腾C30](https://3sv.uum.cc/2022/07/c3035nas.html) | G-T40N+4G RAM+2T HDD          | CentOS 7 2009                                                | 闲置                       |
 | 威联通TS-120                                           | Marvell+512M RAM+1T           | QTS 4.3.3                                                    | 闲置                         |
 | 玩客云                                                 | S805+1G RAM+8G ROM            | 原版                                                         | 闲置                         |
 | 玩客云                                                 | S805+1G RAM+8G ROM            | 原版                                                         | 闲置                         |
@@ -41,20 +41,20 @@ title: 数码清单
 | 名称                                                         | 状态 | 备注                         |
 | ------------------------------------------------------------ | ---- | ---------------------------- |
 | Cherry G80-3494 红轴                                         | 在用 | 机械键盘，樱桃红轴，不带钢板 |
-| [ET87 青轴](https://3sv.8dry.com/2021/01/et87.html)         | 闲置 | 机械键盘，环宇轴，带钢板     |
-| [Reicat RK300](https://3sv.8dry.com/2018/08/reicat.html)    | 在用 | 薄膜键盘，背光               |
+| [ET87 青轴](https://3sv.uum.cc/2021/01/et87.html)         | 闲置 | 机械键盘，环宇轴，带钢板     |
+| [Reicat RK300](https://3sv.uum.cc/2018/08/reicat.html)    | 在用 | 薄膜键盘，背光               |
 | DELL SK 8115                                                 | 闲置 | 薄膜键盘                     |
-| [英菲克 PW1](https://3sv.8dry.com/2021/08/pm6pw1.html)      | 在用 | 有线鼠标                     |
-| [英菲克 PM6](https://3sv.8dry.com/2021/08/pm6pw1.html)      | 闲置 | 无线鼠标                     |
-| [JamesDonkey 2003b](https://3sv.8dry.com/2021/06/jamesdonkey.html) | 闲置 | 蓝牙鼠标                     |
+| [英菲克 PW1](https://3sv.uum.cc/2021/08/pm6pw1.html)      | 在用 | 有线鼠标                     |
+| [英菲克 PM6](https://3sv.uum.cc/2021/08/pm6pw1.html)      | 闲置 | 无线鼠标                     |
+| [JamesDonkey 2003b](https://3sv.uum.cc/2021/06/jamesdonkey.html) | 闲置 | 蓝牙鼠标                     |
 | 罗技M86                                                      | 闲置 | 无线鼠标                     |
 
 ## 耳机
 
 | 名称                                                   | 状态 | 备注                   |
 | ------------------------------------------------------ | ---- | ---------------------- |
-| [Bose QC25](https://3sv.8dry.com/2016/12/bose.html)   | 闲置 | 主动降噪，有线，头戴式 |
-| [漫步者 K800](https://3sv.8dry.com/2021/12/k800.html) | 在用 | 有线，头戴式           |
+| [Bose QC25](https://3sv.uum.cc/2016/12/bose.html)   | 闲置 | 主动降噪，有线，头戴式 |
+| [漫步者 K800](https://3sv.uum.cc/2021/12/k800.html) | 在用 | 有线，头戴式           |
 | QCY T8                                                 | 在用 | 蓝牙，TWS，非入耳      |
 
 ## 手机与平板
