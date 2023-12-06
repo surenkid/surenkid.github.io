@@ -239,7 +239,6 @@ alipay: /assets/images/pay_alipay.png
 links_title: Links
 links:
   三思屋: https://3sv.uum.cc/
-  Cloudflare: https://www.cloudflare.com/
 
 
 # Sidebar Avatar
@@ -285,10 +284,10 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
 
 
 # Blog rolls
