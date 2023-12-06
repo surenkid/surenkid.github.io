@@ -12,6 +12,8 @@ tags:
 - selinux
 ---
 
+![CentOS7 安装Samba Server，开启SMB服务](https://static.ktsee.com/s1/2023/12/06/iorxi5.png)
+
 ## 前言
 
 局域网传输文件，有多种协议可以实现，samba（以下简称smb）协议无疑是使用上最方便的一种。本次我们尝试在全新的CentOS7 2009上安装smb服务，同时在不关闭selinux的情况下搞定权限问题。开工。
