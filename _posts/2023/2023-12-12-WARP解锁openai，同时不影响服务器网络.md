@@ -34,9 +34,11 @@ bash <(curl -Ls https://get.docker.com) --mirror Aliyun
 docker network create internalnet
 ```
 
-## 启动warp容器
+## 启动warp服务
 
-这里使用打包好的镜像，启动warp服务：
+这里使用打包好的镜像，该镜像的优点是，docker运行时无需提供额外的宿主机权限，仅在容器内部通过socat转发暴露端口。
+
+终端中执行以下命令启动warp服务：
 ```bash
 docker run -d \
   --name warp-cli-$USER \
@@ -50,7 +52,7 @@ docker run -d \
   surenkid/warp-cli:20230706
 ```
 
-启动之后，服务器便开启了一个端口号为65535的socket代理
+ 启动之后，服务器便开启了一个端口号为65535的socket代理。
 
 ## 测试warp
 
