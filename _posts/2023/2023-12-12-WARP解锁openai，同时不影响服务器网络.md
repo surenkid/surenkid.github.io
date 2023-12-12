@@ -3,7 +3,7 @@ layout: post
 title: WARP解锁openai，同时不影响服务器网络
 date: 2023-12-12
 category: 服务器运维
-excerpt: 本篇介绍了如何在不影响服务器本身网络的情况下，使用Cloudflare的Warp服务来安全访问网络和解锁OpenAI服务。内容包括安装Docker，创建Docker子网的步骤，如何使用Docker镜像启动Warp服务，测试了Warp服务是否成功运行等。
+excerpt: 本篇介绍了如何在不影响服务器本身网络的情况下，使用Cloudflare的Warp服务来安全访问网络和解锁OpenAI服务。内容包括安装Docker并配置Docker子网，使用Docker镜像启动Warp服务，以及测试Warp服务是否成功运行等。
 permalink: /805.html
 tags:
 - VPS
