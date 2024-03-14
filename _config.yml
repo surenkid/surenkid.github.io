@@ -667,16 +667,16 @@ vendors:
   _internal: assets/lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.1.3/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  fancybox: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/2.1.5/jquery.fancybox.min.js
+  fancybox_css: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/2.1.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  fastclick:
+  fastclick: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fastclick/1.0.6/fastclick.min.js
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
@@ -684,19 +684,19 @@ vendors:
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/velocity/1.2.1/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/velocity/1.2.1/velocity.ui.min.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/UAParser.js/0.7.9/ua-parser.min.js
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.6.2/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -708,12 +708,12 @@ vendors:
   # Or use direct links below:
   # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
-  pace:
-  pace_css:
+  pace: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.0.2/pace.min.js
+  pace_css: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.0.2/themes/blue/pace-theme-flash.min.css
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
+  canvas_nest: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/canvas-nest.js/1.0.0/canvas-nest.min.js
 
   # three
   three:
@@ -736,7 +736,7 @@ vendors:
 
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
-  han:
+  han: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Han/3.3.0/han.min.css
 
 
 # Assets
