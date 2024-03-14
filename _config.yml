@@ -680,7 +680,7 @@ vendors:
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: //lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery_lazyload/1.9.7/jquery.lazyload.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
