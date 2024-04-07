@@ -217,6 +217,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/surenkid
+  TG: https://t.me/surenkid
 
 # Social Links Icons
 # Icon Mapping:
@@ -228,6 +229,7 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
+  TG: telegram
   Twitter: twitter
   Weibo: weibo
 
