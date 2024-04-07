@@ -1,5 +1,5 @@
 title:
-  archive: 归档
+  archive: 文章
   category: 分类
   tag: 标签
   schedule: 日程表
@@ -12,7 +12,7 @@ author: 博主
 
 menu:
   home: 首页
-  archives: 归档
+  archives: 文章
   categories: 分类
   tags: 标签
   about: 关于
@@ -64,12 +64,12 @@ counter:
     other: "目前共计 %d 个分类"
 
   archive_posts:
-    zero: 暂无日志。
-    one: 目前共计 1 篇日志。
-    other: "目前共计 %d 篇日志。"
+    zero: 暂无文章。
+    one: 目前共计 1 篇文章。
+    other: "目前共计 %d 篇文章。"
 
 state:
-  posts: 日志
+  posts: 文章
   pages: 页面
   tags: 标签
   categories: 分类
