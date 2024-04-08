@@ -392,8 +392,8 @@ baidu_analytics: 94465e8b129b801a78f9307a164ecd16
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: surenkid
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
