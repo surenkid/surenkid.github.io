@@ -1,8 +1,7 @@
 entries:
   - title: readme
     entries:
-      - title: "Stay hungry, Stay foolish." 
-      - title: 这是我的技术日志，记录一些有用的技术笔记。
+      - title: 我是surenkid，这里是我的个人博客，记录一些有用的技术笔记和心得。
       - title: "> whoami"
         url: about.html
 
