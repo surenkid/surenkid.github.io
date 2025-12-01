@@ -24,10 +24,11 @@ sass:
   style: compressed
 
 plugins:
-  - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
   - jektex
+  - jekyll-sitemap
+  - jekyll-target-blank
 
 jektex:
   cache_dir: ".jektex-cache"
