@@ -28,7 +28,6 @@ plugins:
   - jekyll-seo-tag
   - jektex
   - jekyll-sitemap
-  - jekyll-target-blank
 
 jektex:
   cache_dir: ".jektex-cache"
