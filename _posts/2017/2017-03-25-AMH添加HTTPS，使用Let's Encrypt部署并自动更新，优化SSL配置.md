@@ -2,7 +2,7 @@
 layout: post
 title: AMH添加HTTPS，使用Let's Encrypt部署并自动更新，优化SSL配置
 date: 2017-03-25 08:03:00
-category: Server
+category: Linux
 permalink: /631.html
 tags:
 - AMH

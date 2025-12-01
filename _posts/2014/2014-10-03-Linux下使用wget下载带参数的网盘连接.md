@@ -2,7 +2,7 @@
 layout: post
 title: Linux下使用wget下载带参数的网盘连接
 date: 2014-10-03 07:46:00
-category: App
+category: Linux
 permalink: /89.html
 tags:
 - wget

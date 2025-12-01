@@ -2,7 +2,7 @@
 layout: post
 title: 移动封顶卡使用ProxyDroid及OpemVPM实现正常上网
 date: 2015-10-26 04:54:00
-category: App
+category: Linux
 permalink: /504.html
 tags:
 - Mobile

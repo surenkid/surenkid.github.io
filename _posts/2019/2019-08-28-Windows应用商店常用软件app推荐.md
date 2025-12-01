@@ -2,7 +2,7 @@
 layout: post
 title: Windows应用商店常用软件app推荐
 date: 2019-08-28 04:14:00
-category: App
+category: Linux
 permalink: /780.html
 tags:
 - QQ

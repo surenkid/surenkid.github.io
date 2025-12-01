@@ -2,7 +2,7 @@
 layout: post
 title: Linux上搭建饥荒联机版Don't Starve Together服务器
 date: 2016-12-05 03:15:00
-category: Code
+category: Linux
 permalink: /608.html
 tags:
 - wget

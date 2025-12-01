@@ -2,7 +2,7 @@
 layout: post
 title: AMH面板中ambmail加密分卷附件解压方法
 date: 2014-11-04 01:47:00
-category: App
+category: Linux
 permalink: /138.html
 tags:
 - AMH

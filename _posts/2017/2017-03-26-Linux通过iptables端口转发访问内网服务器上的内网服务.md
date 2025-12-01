@@ -2,7 +2,7 @@
 layout: post
 title: Linux通过iptables端口转发访问内网服务器上的内网服务
 date: 2017-03-26 12:09:00
-category: Server
+category: Linux
 permalink: /635.html
 tags:
 - iptables

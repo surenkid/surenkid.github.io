@@ -2,7 +2,7 @@
 layout: post
 title: CentOS更新时提示could not retrieve mirrorlist mirrorlist.centos.org问题解决
 date: 2014-09-25 02:31:14
-category: Server
+category: Linux
 permalink: /35.html
 tags:
 - CentOS

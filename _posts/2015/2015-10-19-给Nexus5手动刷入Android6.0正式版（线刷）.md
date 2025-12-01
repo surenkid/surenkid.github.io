@@ -2,7 +2,7 @@
 layout: post
 title: 给Nexus5手动刷入Android6.0正式版（线刷）
 date: 2015-10-19 15:18:00
-category: App
+category: Linux
 permalink: /501.html
 tags:
 - Nexus

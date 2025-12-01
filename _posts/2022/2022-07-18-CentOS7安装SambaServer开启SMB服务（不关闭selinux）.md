@@ -2,7 +2,7 @@
 layout: post
 title: CentOS7 安装Samba Server，开启SMB服务（不关闭selinux）
 date: 2022-07-18 11:26:00
-category: Server
+category: Linux
 excerpt: 本文介绍了在全新的CentOS 7 2009上安装Samba服务的步骤。主要包括安装Samba、配置防火墙、创建文件夹、创建SMB用户组和用户、设置用户密码及权限、编辑Samba配置文件、重启服务、设置SELinux安全上下文等。最后通过验证在Explorer中输入服务器IP的方式确认Samba服务是否成功部署。
 permalink: /803.html
 tags:

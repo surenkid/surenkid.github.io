@@ -2,7 +2,7 @@
 layout: post
 title: AMH面板中安装freetds配置PHP访问SQL Server数据库
 date: 2015-01-22 03:22:00
-category: Code
+category: Programming
 permalink: /249.html
 tags:
 - AMH

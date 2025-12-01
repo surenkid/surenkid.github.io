@@ -2,7 +2,7 @@
 layout: post
 title: Win下搭建本地PHP+xdebug测试环境
 date: 2016-04-08 02:36:00
-category: Code
+category: Programming
 permalink: /536.html
 tags:
 - xdebug

@@ -2,7 +2,7 @@
 layout: post
 title: 使用git结合bitbucket私有仓库进行版本控制
 date: 2015-09-07 08:20:00
-category: App
+category: Programming
 permalink: /444.html
 tags:
 - git

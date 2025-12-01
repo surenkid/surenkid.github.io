@@ -2,7 +2,7 @@
 layout: post
 title: AMH面板安装ownCloud注意事项
 date: 2015-01-26 08:40:00
-category: Server
+category: Linux
 permalink: /251.html
 tags:
 - AMH

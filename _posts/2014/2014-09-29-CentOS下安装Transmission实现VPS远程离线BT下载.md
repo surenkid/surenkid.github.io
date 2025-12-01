@@ -2,7 +2,7 @@
 layout: post
 title: CentOS下安装Transmission实现VPS远程离线BT下载
 date: 2014-09-29 04:38:00
-category: Server
+category: Linux
 permalink: /57.html
 tags:
 - BT

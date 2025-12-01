@@ -2,7 +2,7 @@
 layout: post
 title: jQuery的scrollify插件实现图片全屏及热点链接
 date: 2014-09-26 07:15:02
-category: Code
+category: Programming
 permalink: /37.html
 tags:
 - jQuery

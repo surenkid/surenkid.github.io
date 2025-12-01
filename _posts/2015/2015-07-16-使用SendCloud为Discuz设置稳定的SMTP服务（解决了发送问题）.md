@@ -2,7 +2,7 @@
 layout: post
 title: 使用SendCloud为Discuz设置稳定的SMTP服务（解决了发送问题）
 date: 2015-07-16 06:30:00
-category: App
+category: Programming
 permalink: /420.html
 tags:
 - smtp
