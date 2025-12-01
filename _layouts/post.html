@@ -1,6 +1,15 @@
 ---
-layout: layout
+layout: default
 ---
 
-{% assign __ = site.data.languages[site.language] %}
-{% include post.html %}
+{%-include back_link.html-%}
+
+<article>
+  <p class="post-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date: site.theme_config.date_format }}</time>
+  </p>
+  
+  <h1>{{ page.title }}</h1>
+
+  {{ content }}
+</article>
