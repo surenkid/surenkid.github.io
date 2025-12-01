@@ -61,5 +61,5 @@ tags:
 ![请输入图片描述][2]
 
 
-  [1]: http://hi.ktsee.com/249.html
+  [1]: http://hi.ktsee.uum.cc/249.html
   [2]: https://static.ktsee.com/s1/2016/07/20160705133738623.png

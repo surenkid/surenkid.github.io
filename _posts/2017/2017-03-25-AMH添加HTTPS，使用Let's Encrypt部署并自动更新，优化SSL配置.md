@@ -30,7 +30,7 @@ tags:
     wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
     chmod +x letsencrypt.sh
 
-根据需要设置https的网站设置不同的配置文件，我这里需要设置的域名分别有3sv.ktsee.com和hi.ktsee.com，因此需要新建`let3sv.conf`和`lethi.conf`两个配置文件（命名可以随意）
+根据需要设置https的网站设置不同的配置文件，我这里需要设置的域名分别有3sv.ktsee.com和hi.ktsee.uum.cc，因此需要新建`let3sv.conf`和`lethi.conf`两个配置文件（命名可以随意）
 
 接着编辑配置文件，这里以`let3sv.conf`为例，添加内容如下：
 
@@ -45,11 +45,11 @@ tags:
 - `DOMAIN_KEY`是为该域名签署生成的key文件名
 - `DOMAIN_DIR`是网站内容具体存放的路径，实际可以通过3sv.ktsee.com访问到
 - `DOMAINS`是签署的域名，如果该站点绑定多个域名，可以使用逗号同时签多个域名
-    -（例子`DOMAINS="DNS:3sv.ktsee.com,DNS:hi.ktsee.com"`）
+    -（例子`DOMAINS="DNS:3sv.ktsee.com,DNS:hi.ktsee.uum.cc"`）
 
 ## 配置AMH后台HTTPS插件
 
-在AMH后台开启BBShijieSSL-1.1插件，配置3sv.ktsee.com和hi.ktsee.com两个站点的ssl证书，内容可以先随意填写
+在AMH后台开启BBShijieSSL-1.1插件，配置3sv.ktsee.com和hi.ktsee.uum.cc两个站点的ssl证书，内容可以先随意填写
 
 ![插件界面][5]
 
@@ -67,7 +67,7 @@ tags:
 
 ## 开始签署证书
 
-这里我有3sv.ktsee.com和hi.ktsee.com两个站点，对应两个配置文件分别为`let3sv.conf`和`lethi.conf`，因此分别执行：
+这里我有3sv.ktsee.com和hi.ktsee.uum.cc两个站点，对应两个配置文件分别为`let3sv.conf`和`lethi.conf`，因此分别执行：
 
     ./letsencrypt.sh let3sv.conf
     ./letsencrypt.sh lethi.conf

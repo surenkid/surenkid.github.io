@@ -171,7 +171,7 @@ restorecon -Rv /home/samba/public
 
 ## 结语
 
-至此centos 7安装samba server结束，其实我搭建这个服务，是为了让我的那台前段时间入手的[升腾C30小主机](https://3sv.ktsee.net/2022/07/c3035nas.html)物尽其用。
+至此centos 7安装samba server结束，其实我搭建这个服务，是为了让我的那台前段时间入手的[升腾C30小主机](https://3sv.ktsee.uum.cc/2022/07/c3035nas.html)物尽其用。
 
 ![升腾C30小主机](https://static.ktsee.com/s1/2022/7/19/cljbc4yhtb8w.png)
 

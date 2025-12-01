@@ -28,7 +28,7 @@ tags:
 - 功能
 ---
 
-<!--markdown-->前两年入手macbook[推荐了一部分好用的应用](http://hi.ktsee.com/656.html)，而在Windows平台，软件本来就层出不穷，似乎没有必要特地推荐一番，但是自Win10开始，Windows加入了应用商店（Microsoft Store）可以下载相关的应用。这些应用经过微软的官方审核，安全性相对而言还是不错的，基本可以替代一些常用的流氓软件了。这里我基于自己的需求来整理一下目前在Windows应用商店里发现的一些常用软件。
+<!--markdown-->前两年入手macbook[推荐了一部分好用的应用](http://hi.ktsee.uum.cc/656.html)，而在Windows平台，软件本来就层出不穷，似乎没有必要特地推荐一番，但是自Win10开始，Windows加入了应用商店（Microsoft Store）可以下载相关的应用。这些应用经过微软的官方审核，安全性相对而言还是不错的，基本可以替代一些常用的流氓软件了。这里我基于自己的需求来整理一下目前在Windows应用商店里发现的一些常用软件。
 
 ![](https://static.ktsee.com/s1/2019/07/12/5d27df580b79c.png)
 

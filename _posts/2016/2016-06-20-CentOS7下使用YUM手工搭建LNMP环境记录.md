@@ -219,7 +219,7 @@ CentOS7官方源中把mysql换成了MariaDB，它是mysql的一个分支，主�
 
 接着对每个站点进行单独配置，在站点根目录新建.user.ini文件，新增内容：
 
-    open_basedir = /data/wwwroot/hi.ktsee.com/
+    open_basedir = /data/wwwroot/hi.ktsee.uum.cc/
 
 这里的路径设置为站点自身的物理路径。接着保存即可。
 
@@ -301,5 +301,5 @@ CentOS7官方源中把mysql换成了MariaDB，它是mysql的一个分支，主�
 
 
   [1]: https://nginx.org/en/linux_packages.html#stable
-  [2]: http://hi.ktsee.com/547.html
+  [2]: http://hi.ktsee.uum.cc/547.html
   [3]: https://ius.io/

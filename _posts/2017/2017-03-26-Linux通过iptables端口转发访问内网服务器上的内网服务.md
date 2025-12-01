@@ -67,5 +67,5 @@ tags:
 值得注意的是，这样相当于对外网公开了本来处于内网中的服务，因带来了安全隐患，建议对这方面的安全问题也做一些处理，例如限制指定IP访问该端口等。
 
 
-  [1]: http://hi.ktsee.com/83.html
+  [1]: http://hi.ktsee.uum.cc/83.html
   [2]: http://wwdhks.blog.51cto.com/839773/1154032

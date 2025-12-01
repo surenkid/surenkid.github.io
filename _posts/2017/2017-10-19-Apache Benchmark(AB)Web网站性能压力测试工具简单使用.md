@@ -38,7 +38,7 @@ Ubuntu下也差不多：
 
 安装好之后直接使用如下命令即可简单测试：
 
-    ab http://hi.ktsee.com/
+    ab http://hi.ktsee.uum.cc/
 
 当然每个测试的场景不同，这些必要的参数还是需要设置的：
 
@@ -48,15 +48,15 @@ Ubuntu下也差不多：
 
 简单举例，如果要模拟1个用户访问1000次：
 
-    ab -n 1000 http://hi.ktsee.com/
+    ab -n 1000 http://hi.ktsee.uum.cc/
 
 如果要模拟500个用户访问1000次（表示每个用户访问2次）
 
-    ab -c 500 -n 1000 http://hi.ktsee.com/
+    ab -c 500 -n 1000 http://hi.ktsee.uum.cc/
 
 如果要模拟500个用户同时访问，并且每个用户访问停留时间10秒：
 
-    ab -c 500 -t 10 http://hi.ktsee.com/
+    ab -c 500 -t 10 http://hi.ktsee.uum.cc/
 
 以上是常用的参数，其他参数如下，可以根据实际测试场景使用：
 
@@ -91,7 +91,7 @@ Ubuntu下也差不多：
     Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
     Licensed to The Apache Software Foundation, http://www.apache.org/
     
-    Benchmarking hi.ktsee.com (be patient)
+    Benchmarking hi.ktsee.uum.cc (be patient)
     Completed 100 requests
     Completed 200 requests
     Completed 300 requests
@@ -106,7 +106,7 @@ Ubuntu下也差不多：
     
     
     Server Software:        
-    Server Hostname:        hi.ktsee.com                        
+    Server Hostname:        hi.ktsee.uum.cc                        
     Server Port:            80                                    
     
     Document Path:          /
