@@ -1,1 +1,1 @@
-<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+<a href="{{ "/" | relative_url }}" onclick="if(document.referrer && document.referrer !== window.location.href) { history.back(); return false; }">{{ site.theme_config.back_home_text }}</a>
