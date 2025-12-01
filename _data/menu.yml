@@ -14,14 +14,14 @@ entries:
 
   - title: categories
     entries:
-      - title: code
-        url: archive-code.html
-      - title: server
-        url: archive-server.html
-      - title: app
-        url: archive-app.html
-      - title: life
+      - title: Programming
+        url: archive-programming.html
+      - title: Linux
+        url: archive-linux.html
+      - title: Life
         url: archive-life.html
+      - title: AI
+        url: archive-ai.html
 
   - title: rss
     url: feed.xml
