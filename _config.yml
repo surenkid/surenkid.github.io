@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
-url: https://surenkid.github.io
+url: https://hi.ktsee.uum.cc
 baseurl: 
 permalink: /:short_year:y_day:hour:minute:output_ext
 
