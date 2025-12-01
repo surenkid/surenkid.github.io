@@ -2,7 +2,7 @@ title: 看天博客 # name of the site
 author: surenkid # name of site's author
 email: surenkid@ktsee.uum.cc # email of site's author
 url: https://hi.ktsee.uum.cc # root address of the site
-baseurl: "/no-style-please" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
+baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
   Stay hungry, Stay foolish
 
