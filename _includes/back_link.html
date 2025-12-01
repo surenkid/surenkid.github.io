@@ -1,1 +1,4 @@
-<a href="{{ "/" | relative_url }}" onclick="if(document.referrer && document.referrer !== window.location.href && new URL(document.referrer).origin === window.location.origin) { history.back(); return false; }">{{ site.theme_config.back_home_text }}</a>
+<a href="{{ "/" | relative_url }}" 
+   onclick="var ref = document.referrer; var host = window.location.host; if (ref && ref.indexOf(host) !== -1) { history.back(); return false; }">
+   {{ site.theme_config.back_home_text }}
+</a>
