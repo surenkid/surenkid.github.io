@@ -1,32 +1,28 @@
-# For documentation on this file, see:
-# https://github.com/riggraz/no-style-please#customize-the-menu
-
 entries:
-  - title: info
+  - title: readme
     entries:
+      - title: "Stay hungry, Stay foolish." 
       - title: 这是我的技术日志，记录一些有用的技术笔记。
+      - title: "> whoami"
+        url: about.html
 
-  - title: all posts
+  - title: recent
     post_list:
-      limit: 5
+      limit: 10
       show_more: true
-      show_more_text: 查看更多日志>>
+      show_more_text: 查看更多日志 >>
       show_more_url: archive.html
 
-  - title: pages
+  - title: categories
     entries:
-      - title: categories
-        entries:
-          - title: app
-            url: archive-app.html
-          - title: code
-            url: archive-code.html
-          - title: server
-            url: archive-server.html
-          - title: life
-            url: archive-life.html
-      - title: about page
-        url: about.html
+      - title: code
+        url: archive-code.html
+      - title: server
+        url: archive-server.html
+      - title: app
+        url: archive-app.html
+      - title: life
+        url: archive-life.html
 
   - title: rss
     url: feed.xml
