@@ -2,7 +2,7 @@
 layout: post
 title: Apache Benchmark(AB)Web网站性能压力测试工具简单使用
 date: 2017-10-19 00:39:00
-category: 软件应用
+category: App
 permalink: /672.html
 tags:
 - apache

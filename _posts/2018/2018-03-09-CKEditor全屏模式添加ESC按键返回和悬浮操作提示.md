@@ -2,7 +2,7 @@
 layout: post
 title: CKEditor全屏模式添加ESC按键返回和悬浮操作提示
 date: 2018-03-09 03:26:00
-category: Web开发
+category: Code
 permalink: /694.html
 tags:
 - CKEditor

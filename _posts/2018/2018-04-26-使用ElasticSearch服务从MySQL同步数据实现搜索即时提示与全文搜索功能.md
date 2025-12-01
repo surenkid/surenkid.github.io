@@ -2,7 +2,7 @@
 layout: post
 title: 使用ElasticSearch服务从MySQL同步数据实现搜索即时提示与全文搜索功能
 date: 2018-04-26 09:20:00
-category: 架构设计
+category: Code
 permalink: /697.html
 tags:
 - CentOS

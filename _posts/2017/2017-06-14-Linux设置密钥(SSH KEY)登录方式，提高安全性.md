@@ -2,7 +2,7 @@
 layout: post
 title: Linux设置密钥(SSH KEY)登录方式，提高安全性
 date: 2017-06-14 03:26:00
-category: 服务器运维
+category: Server
 permalink: /652.html
 tags:
 - ssh

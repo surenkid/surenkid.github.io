@@ -2,7 +2,7 @@
 layout: post
 title: IBM Cloud Forum大会参后感
 date: 2018-11-15 13:18:00
-category: 随笔
+category: Life
 permalink: /759.html
 tags:
 - 问题

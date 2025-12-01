@@ -2,7 +2,7 @@
 layout: post
 title: AMH面板中安装phalcon框架扩展
 date: 2016-07-01 02:35:00
-category: 架构设计
+category: Code
 permalink: /547.html
 tags:
 - phalcon

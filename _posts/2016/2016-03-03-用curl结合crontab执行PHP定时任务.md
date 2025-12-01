@@ -2,7 +2,7 @@
 layout: post
 title: 用curl结合crontab执行PHP定时任务
 date: 2016-03-03 03:51:00
-category: 服务器运维
+category: Server
 permalink: /526.html
 tags:
 - crontab

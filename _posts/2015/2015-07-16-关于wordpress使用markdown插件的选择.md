@@ -2,7 +2,7 @@
 layout: post
 title: 关于wordpress使用markdown插件的选择
 date: 2015-07-16 03:26:55
-category: Web开发
+category: Code
 permalink: /412.html
 tags:
 - WordPress

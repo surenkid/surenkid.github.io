@@ -2,7 +2,7 @@
 layout: post
 title: 个人搭建的MineCraft服务器
 date: 2015-03-10 09:58:00
-category: 架构设计
+category: Code
 permalink: /281.html
 tags:
 - MineCraft

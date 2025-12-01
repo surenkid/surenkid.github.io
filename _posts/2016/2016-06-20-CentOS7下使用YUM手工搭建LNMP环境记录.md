@@ -2,7 +2,7 @@
 layout: post
 title: CentOS7下使用YUM手工搭建LNMP环境记录
 date: 2016-06-20 02:22:00
-category: 架构设计
+category: Code
 permalink: /545.html
 tags:
 - CentOS

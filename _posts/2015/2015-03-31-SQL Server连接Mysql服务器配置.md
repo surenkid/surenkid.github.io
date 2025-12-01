@@ -2,7 +2,7 @@
 layout: post
 title: SQL Server连接Mysql服务器配置
 date: 2015-03-31 02:54:00
-category: Web开发
+category: Code
 permalink: /302.html
 tags:
 - MySQL

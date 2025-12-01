@@ -2,7 +2,7 @@
 layout: post
 title: 解决Nginx+php-fpm服务器遇到的502 bad gateway错误
 date: 2016-08-30 02:05:00
-category: 服务器运维
+category: Server
 permalink: /602.html
 tags:
 - nginx

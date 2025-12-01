@@ -2,7 +2,7 @@
 layout: post
 title: ThinkPHP中Auth类的简单使用
 date: 2014-10-10 09:37:49
-category: Web开发
+category: Code
 permalink: /117.html
 tags:
 - ThinkPHP

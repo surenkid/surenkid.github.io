@@ -2,7 +2,7 @@
 layout: post
 title: rclone定时自动备份VPS服务器上网站数据到网盘
 date: 2017-05-11 21:42:00
-category: 服务器运维
+category: Server
 permalink: /646.html
 tags:
 - crontab

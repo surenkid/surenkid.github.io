@@ -2,7 +2,7 @@
 layout: post
 title: 使用Docker搭建PHP本地开发环境
 date: 2017-06-14 04:05:00
-category: 架构设计
+category: Code
 permalink: /655.html
 tags:
 - Ubuntu

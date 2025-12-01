@@ -2,7 +2,7 @@
 layout: post
 title: Debian安装与配置vsftp、lighttpd服务器用于远程附件
 date: 2014-09-27 15:53:00
-category: 服务器运维
+category: Server
 permalink: /50.html
 tags:
 - vsftp

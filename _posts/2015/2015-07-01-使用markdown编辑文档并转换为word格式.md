@@ -2,7 +2,7 @@
 layout: post
 title: 使用markdown编辑文档并转换为word格式
 date: 2015-07-01 03:30:00
-category: 软件应用
+category: App
 permalink: /383.html
 tags:
 - markdown

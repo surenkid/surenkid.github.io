@@ -2,7 +2,7 @@
 layout: post
 title: 《原则Principles》读书笔记（生活部分）
 date: 2018-02-23 08:37:00
-category: 阅读思考
+category: Life
 permalink: /682.html
 tags:
 - 问题

@@ -2,7 +2,7 @@
 layout: post
 title: Linux下使用Shell端口转发与内网穿透访问内网服务器
 date: 2014-10-02 09:16:00
-category: 软件应用
+category: App
 permalink: /83.html
 tags:
 - Shell

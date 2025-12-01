@@ -2,7 +2,7 @@
 layout: post
 title: jQuery EasyUI中DataGrid加载空数据时出现Cannot read property length of undefined错误解决
 date: 2014-11-04 06:09:25
-category: Web开发
+category: Code
 permalink: /143.html
 tags:
 - EasyUI

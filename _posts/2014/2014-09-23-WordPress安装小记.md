@@ -2,7 +2,7 @@
 layout: post
 title: WordPress安装小记
 date: 2014-09-23 14:55:00
-category: 软件应用
+category: App
 permalink: /6.html
 tags:
 - WordPress

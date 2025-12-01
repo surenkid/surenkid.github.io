@@ -2,7 +2,7 @@
 layout: post
 title: 树莓派omxplayer播放电影小记
 date: 2015-06-10 12:45:39
-category: 软件应用
+category: App
 permalink: /372.html
 tags:
 - RaspberryPi

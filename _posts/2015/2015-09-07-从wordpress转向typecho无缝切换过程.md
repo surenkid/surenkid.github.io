@@ -2,7 +2,7 @@
 layout: post
 title: 从wordpress转向typecho无缝切换过程
 date: 2015-09-07 09:19:00
-category: Web开发
+category: Code
 permalink: /468.html
 tags:
 ---

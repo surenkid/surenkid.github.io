@@ -2,7 +2,7 @@
 layout: post
 title: CentOS安装fedora企业软件附加包（EPEL源）
 date: 2014-11-08 15:56:00
-category: 架构设计
+category: Code
 permalink: /153.html
 tags:
 - CentOS

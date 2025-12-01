@@ -2,7 +2,7 @@
 layout: post
 title: Debian安装davfs2挂载webdav空间
 date: 2014-10-01 14:04:00
-category: 架构设计
+category: Code
 permalink: /79.html
 tags:
 - webdav
