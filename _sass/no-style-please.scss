@@ -1,6 +1,7 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   filter: invert(1);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
   img {
     filter: invert(1);
 
@@ -35,11 +36,6 @@ body {
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
-}
-
-body[a="dark"],
-body[a="auto"] {
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
 }
 
 .post-meta { text-align: right; }
