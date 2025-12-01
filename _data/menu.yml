@@ -14,10 +14,10 @@ entries:
 
   - title: categories
     entries:
-      - title: Programming
-        url: archive-programming.html
       - title: Linux
         url: archive-linux.html
+      - title: Programming
+        url: archive-programming.html
       - title: Life
         url: archive-life.html
       - title: AI
