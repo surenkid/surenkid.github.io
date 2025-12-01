@@ -2,7 +2,7 @@
 layout: post
 title: PHP连接SQL Server数据库编码问题
 date: 2016-07-05 03:33:00
-category: Linux
+category: Programming
 permalink: /560.html
 tags:
 - SQLServer
