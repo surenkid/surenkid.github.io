@@ -42,12 +42,17 @@ body {
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
 a {
+  color: #8cc2dd;
   cursor: pointer;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline; 
+}
+
+a:visited {
+  color: #8b6fcb;
 }
 
 hr { margin: 2rem 0; }
