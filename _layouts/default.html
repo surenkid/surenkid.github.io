@@ -5,7 +5,6 @@
     <main class="page-content" aria-label="Content">
       <div class="w">
         {{ content }}
-        {%-include foot.html-%}
       </div>
     </main>
 
@@ -18,5 +17,7 @@
         <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
       {% endfor %}
     {% endif %}
+
+    {%-include foot.html-%}
   </body>
 </html>
