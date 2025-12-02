@@ -1,27 +1,27 @@
 entries:
-  - title: readme
+  - title: Hello World
     entries:
-      - title: 我是surenkid，这里是我的个人博客，记录一些有用的技术笔记和心得。
-      - title: "> whoami"
+      - title: 我是 surenkid，这里是我的个人博客，沉淀技术实战经验，也记录生活中的碎碎念。
+      - title: "更多介绍 >>"
         url: about.html
 
-  - title: recent
+  - title: 最近更新
     post_list:
       limit: 10
       show_more: true
-      show_more_text: 查看更多日志 >>
+      show_more_text: 查看更多文章 >>
       show_more_url: archive.html
 
-  - title: categories
+  - title: 文章分类
     entries:
-      - title: Linux
+      - title: Linux & 运维
         url: archive-linux.html
-      - title: Programming
+      - title: 编程开发
         url: archive-programming.html
-      - title: Life
+      - title: 生活随笔
         url: archive-life.html
-      - title: AI
+      - title: AI探索
         url: archive-ai.html
 
-  - title: rss
+  - title: RSS 订阅
     url: feed.xml
