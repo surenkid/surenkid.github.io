@@ -1,1 +1,1 @@
-forked from https://github.com/simpleyyt/jekyll-theme-next
+forked from https://github.com/riggraz/no-style-please
