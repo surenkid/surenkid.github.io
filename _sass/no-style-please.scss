@@ -109,7 +109,7 @@ img {
 }
 
 @media (max-width: 600px) {
-  ul, ol { 
-    padding-left: 1.2em; 
-  }
+  ul, ol { padding-left: 1.2rem; }
+
+  .w { padding: 2.4rem 1.2rem; }
 }
