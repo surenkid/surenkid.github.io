@@ -11,6 +11,12 @@ title: About
 - 爱好广泛，喜欢钻研。
 - 正在为解决温饱问题而努力。
 
+### 技术栈
+我日常主要用到以下技术：
+- Cloud Native: Kubernetes (K3s/K0s), FluxCD (GitOps), Prometheus/Grafana/Loki.
+- Ops: Linux (CentOS/Ubuntu), Nginx, ACME (HTTPS), Backup Strategies.
+- Code: Python, Bash, PHP (Legacy), JavaScript.
+
 ## 关于本站
 
 [看天博客](https://hi.ktsee.uum.cc/)建立于2014年9月，用于写原创博客文章，也是为了学习中记录一些心得，以下为本站配置：
