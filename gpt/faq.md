@@ -1,6 +1,7 @@
 ---
 layout: page
 title: GPT 常见问题解决
+sitemap: false
 ---
 
 ## 常见问题解决
